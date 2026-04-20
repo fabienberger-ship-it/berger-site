@@ -28,3 +28,14 @@ dist/
 
 # Build artifacts
 *.log
+
+# Astro build output
+dist/
+.astro/
+
+# npm
+node_modules/
+
+# Playwright
+test-results/
+playwright-report/
