@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Politique cookies — Berger & Associés"
+  description="Gestion des cookies, finalités et préférences sur berger-associes.fr."
+  canonicalPath="/cookies"
+>
+  <article class="page page-legal container">
+    <header class="page-header">
+      <p class="page-eyebrow">Cookies et traceurs</p>
+      <h1>Politique cookies</h1>
+    </header>
+
+    <section>
+      <p>
+        Cette page décrit les cookies et traceurs utilisés sur le site berger-associes.fr, leurs
+        finalités et vos moyens de les contrôler.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Qu'est-ce qu'un cookie ?</h2>
+      <p>
+        Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette)
+        lors de la visite d'un site web. Il permet de reconnaître votre navigateur entre deux visites
+        et de conserver certaines informations utiles au fonctionnement du site ou à la mesure d'audience.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Cookies utilisés sur ce site</h2>
+
+      <h3>a. Cookies strictement nécessaires</h3>
+      <p>Ces cookies sont indispensables au fonctionnement du site et ne peuvent être désactivés.</p>
+      <ul>
+        <li><strong>cookie-consent</strong> : enregistre vos préférences de consentement aux cookies. Durée : 6 mois.</li>
+      </ul>
+
+      <h3>b. Cookies de mesure d'audience</h3>
+      <p>
+        Ces cookies nous aident à comprendre comment les visiteurs utilisent le site, de manière
+        anonymisée. Ils ne sont déposés <strong>qu'avec votre consentement explicite</strong>.
+      </p>
+      <ul>
+        <li>
+          <strong>Cloudflare Web Analytics</strong> (ou équivalent compatible CNIL) : mesure d'audience
+          anonymisée sans cookie tiers. Durée : session. Finalité : comptage des visites, pages consultées.
+        </li>
+      </ul>
+      <p>
+        <strong>Aucun cookie publicitaire, de profilage marketing ou de réseaux sociaux n'est déposé
+        sur ce site.</strong>
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Gérer vos préférences</h2>
+      <p>
+        Vous pouvez à tout moment modifier vos préférences en cliquant sur le bouton ci-dessous.
+        Votre choix est conservé pendant 6 mois. Passé ce délai, votre consentement vous sera
+        redemandé à votre prochaine visite.
+      </p>
+      <p>
+        <button type="button" id="open-cookie-preferences" class="btn btn--primary">
+          Gérer mes préférences cookies
+        </button>
+      </p>
+      <p class="note">
+        Vous pouvez également paramétrer votre navigateur pour refuser tous les cookies : les
+        liens d'aide officiels sont disponibles sur le site de la CNIL —
+        <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/comment-se-proteger/maitriser-votre-navigateur" rel="noopener" target="_blank">cnil.fr</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Base légale</h2>
+      <p>
+        Le dépôt des cookies est régi par l'article 82 de la loi Informatique et Libertés et par la
+        directive ePrivacy. Les cookies de mesure d'audience sont déposés sur la base de votre
+        consentement explicite, que vous pouvez retirer à tout moment.
+      </p>
+    </section>
+
+    <footer class="page-updated">
+      <p>Dernière mise à jour : {{TO_CONFIRM: date de mise en ligne}}.</p>
+    </footer>
+  </article>
+</BaseLayout>
+
+<script>
+  const btn = document.getElementById('open-cookie-preferences');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      document.dispatchEvent(new CustomEvent('cookie-preferences:open'));
+    });
+  }
+</script>
+
+<style>
+  .page-legal { padding-block: var(--s-6) var(--s-7); }
+  .page-header { margin-bottom: var(--s-6); padding-bottom: var(--s-4); border-bottom: 1px solid var(--c-divider); }
+  .page-eyebrow { font-size: var(--fs-xs); letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-gold); margin-bottom: var(--s-2); }
+  .page-header h1 { font-family: var(--ff-serif); font-size: clamp(var(--fs-2xl), 5vw, var(--fs-3xl)); font-weight: 600; }
+  .page-legal section { margin-block: var(--s-5); }
+  .page-legal h2 { font-family: var(--ff-serif); font-size: var(--fs-xl); font-weight: 500; margin-bottom: var(--s-2); }
+  .page-legal h3 { font-family: var(--ff-sans); font-size: var(--fs-base); font-weight: 600; margin-top: var(--s-3); margin-bottom: var(--s-1); color: var(--c-fg); }
+  .page-legal p, .page-legal li { color: var(--c-fg-muted); font-size: var(--fs-base); line-height: var(--lh-loose); margin-block: var(--s-2); }
+  .page-legal ul { padding-left: var(--s-3); }
+  .btn {
+    display: inline-block;
+    padding: var(--s-1) var(--s-3);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--c-navy);
+    border-radius: var(--radius-sm);
+    transition: background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
+  }
+  .btn--primary { background: var(--c-navy); color: var(--c-ivoire); }
+  .btn--primary:hover { background: var(--c-ivoire); color: var(--c-navy); }
+  .note { font-size: var(--fs-sm); color: var(--c-fg-muted); }
+  .page-updated { margin-top: var(--s-6); padding-top: var(--s-3); border-top: 1px solid var(--c-divider); font-size: var(--fs-sm); color: var(--c-fg-muted); }
+</style>
+
