@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const associates = [
+  { name: 'Fabien Berger', role: 'Associé fondateur', mailto: 'fabien.berger@berger-associes.fr' },
+  { name: 'Sabine Tellier', role: 'Associée', mailto: 'sabine.tellier@berger-associes.fr' },
+  { name: 'Marine Gorin', role: 'Associée', mailto: 'marine.gorin@berger-associes.fr' },
+];
+---
+
+<BaseLayout
+  title="Berger & Associés — Conseil en gestion de patrimoine, Paris"
+  description="Cabinet indépendant de conseil en gestion de patrimoine, Paris. Trois associés, une relation long terme. Depuis 2013."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">Cabinet de conseil en gestion de patrimoine · Paris · Depuis 2013</p>
+
+      <h1 class="hero__title editorial">
+        Trois associés à Paris,<br>un cabinet en partage.
+      </h1>
+
+      <p class="hero__lead">
+        Fabien Berger, Sabine Tellier, Marine Gorin. Nos clients nous arrivent par recommandation
+        depuis 2013. Ils nous rencontrent en personne, et ils restent.
+      </p>
+
+      <div class="hero__actions">
+        <a href="mailto:contact@berger-associes.fr" class="btn btn--primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="associates">
+    <div class="container">
+      <h2 class="section-h">Les associés</h2>
+      <ul class="associates__grid">
+        {associates.map(({ name, role, mailto }) => (
+          <li class="associate">
+            <div class="associate__portrait" aria-hidden="true"></div>
+            <h3 class="associate__name editorial">{name}</h3>
+            <p class="associate__role">{role}</p>
+            <p class="associate__email">
+              <a href={`mailto:${mailto}`}>{mailto}</a>
+            </p>
+          </li>
+        ))}
+      </ul>
+      <p class="associates__note">
+        La version complète du site, avec les biographies, méthodes et journal des associés,
+        sera mise en ligne prochainement. Pour un rendez-vous ou une demande d'information,
+        contactez-nous par email ou directement un associé.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2 class="section-h">Nous rencontrer</h2>
+      <p>
+        Email du cabinet : <a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a><br>
+        Adresse : {{TO_CONFIRM: adresse complète}}, Paris.
+      </p>
+      <p class="note">
+        Premier rendez-vous sans engagement, à notre cabinet ou en visioconférence. Nous
+        établissons ensemble le périmètre de votre demande avant tout engagement commercial.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--s-7) var(--s-6);
+  }
+
+  .hero__eyebrow {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-gold);
+    margin-bottom: var(--s-3);
+  }
+
+  .hero__title {
+    font-size: clamp(var(--fs-3xl), 7vw, var(--fs-5xl));
+    line-height: var(--lh-tight);
+    letter-spacing: -0.035em;
+    color: var(--c-fg);
+    margin-bottom: var(--s-3);
+    font-weight: 600;
+  }
+
+  .hero__lead {
+    font-size: clamp(var(--fs-lg), 2.2vw, var(--fs-xl));
+    line-height: var(--lh-normal);
+    color: var(--c-fg-muted);
+    max-width: 620px;
+    margin-bottom: var(--s-5);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--s-1) var(--s-3);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-sm);
+    transition: background var(--dur-fast), color var(--dur-fast);
+    text-decoration: none;
+  }
+  .btn--primary { background: var(--c-navy); color: var(--c-ivoire); border: 1px solid var(--c-navy); }
+  .btn--primary:hover { background: var(--c-ivoire); color: var(--c-navy); opacity: 1; }
+
+  .section-h {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-2xl);
+    font-weight: 500;
+    margin-bottom: var(--s-4);
+    padding-bottom: var(--s-2);
+    border-bottom: 1px solid var(--c-divider);
+  }
+
+  .associates {
+    padding-block: var(--s-6);
+  }
+
+  .associates__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-4);
+    margin-bottom: var(--s-4);
+  }
+
+  .associate {
+    text-align: center;
+  }
+
+  .associate__portrait {
+    width: 140px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--c-sand) 0%, var(--c-slate) 100%);
+    margin: 0 auto var(--s-3);
+  }
+
+  .associate__name {
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    margin-bottom: var(--s-1);
+  }
+
+  .associate__role {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--c-gold);
+    margin-bottom: var(--s-2);
+  }
+
+  .associate__email {
+    font-size: var(--fs-sm);
+  }
+
+  .associate__email a {
+    color: var(--c-fg);
+    opacity: 0.75;
+    text-decoration: none;
+  }
+  .associate__email a:hover { opacity: 1; }
+
+  .associates__note {
+    font-size: var(--fs-sm);
+    color: var(--c-fg-muted);
+    text-align: center;
+    font-style: italic;
+    max-width: 600px;
+    margin: var(--s-4) auto 0;
+  }
+
+  .contact {
+    padding-block: var(--s-5) var(--s-7);
+    background: var(--c-sand);
+    margin-top: var(--s-5);
+  }
+
+  .contact p { color: var(--c-fg); font-size: var(--fs-base); line-height: var(--lh-loose); }
+  .contact .note { font-size: var(--fs-sm); color: var(--c-fg-muted); margin-top: var(--s-2); }
+
+  @media (max-width: 720px) {
+    .associates__grid { grid-template-columns: 1fr; gap: var(--s-5); }
+  }
+</style>
