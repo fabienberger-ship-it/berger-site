@@ -1,0 +1,71 @@
+/* Design tokens — palette P2 "Ivoire & Nuit" + typographies */
+:root {
+  /* Palette */
+  --c-ivoire: #FAF6EC;
+  --c-navy: #14233A;
+  --c-slate: #5F6574;
+  --c-gold: #B69153;
+  --c-sand: #E8DEC9;
+  --c-white: #FFFFFF;
+
+  /* Semantic roles */
+  --c-bg: var(--c-ivoire);
+  --c-fg: var(--c-navy);
+  --c-fg-muted: var(--c-slate);
+  --c-accent: var(--c-gold);
+  --c-divider: rgba(20, 35, 58, 0.12);
+
+  /* Typography */
+  --ff-sans: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --ff-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px */
+  --fs-lg: 1.125rem;   /* 18px */
+  --fs-xl: 1.375rem;   /* 22px */
+  --fs-2xl: 1.75rem;   /* 28px */
+  --fs-3xl: 2.5rem;    /* 40px */
+  --fs-4xl: 3.75rem;   /* 60px */
+  --fs-5xl: 5rem;      /* 80px */
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-normal: 1.55;
+  --lh-loose: 1.7;
+
+  /* Spacing scale (8px base) */
+  --s-1: 0.5rem;   /* 8 */
+  --s-2: 1rem;     /* 16 */
+  --s-3: 1.5rem;   /* 24 */
+  --s-4: 2rem;     /* 32 */
+  --s-5: 3rem;     /* 48 */
+  --s-6: 4.5rem;   /* 72 */
+  --s-7: 6rem;     /* 96 */
+
+  /* Layout */
+  --max-content: 960px;
+  --max-wide: 1200px;
+  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Borders / shadows */
+  --radius-sm: 2px;
+  --radius-md: 8px;
+  --shadow-sm: 0 1px 2px rgba(20, 35, 58, 0.06);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --dur-fast: 0.18s;
+  --dur-normal: 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Note Phase 1 : pas de dark mode. Intentionnellement vide. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
