@@ -40,23 +40,22 @@
 </div>
 
 <script>
-  type ConsentState = { analytics: boolean; timestamp: number };
   const STORAGE_KEY = 'cookie-consent';
   const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6;
 
-  const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
-  const prefsBlock = document.querySelector<HTMLElement>('[data-cookie-prefs]');
-  const analyticsInput = document.querySelector<HTMLInputElement>('[data-cookie-pref-analytics]');
-  const btnAcceptAll = document.querySelector<HTMLButtonElement>('[data-cookie-accept-all]');
-  const btnRejectAll = document.querySelector<HTMLButtonElement>('[data-cookie-reject-all]');
-  const btnCustomize = document.querySelector<HTMLButtonElement>('[data-cookie-customize]');
-  const btnSave = document.querySelector<HTMLButtonElement>('[data-cookie-save]');
+  const banner = document.querySelector('[data-cookie-banner]');
+  const prefsBlock = document.querySelector('[data-cookie-prefs]');
+  const analyticsInput = document.querySelector('[data-cookie-pref-analytics]');
+  const btnAcceptAll = document.querySelector('[data-cookie-accept-all]');
+  const btnRejectAll = document.querySelector('[data-cookie-reject-all]');
+  const btnCustomize = document.querySelector('[data-cookie-customize]');
+  const btnSave = document.querySelector('[data-cookie-save]');
 
-  function readConsent(): ConsentState | null {
+  function readConsent() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
-      const parsed = JSON.parse(raw) as ConsentState;
+      const parsed = JSON.parse(raw);
       if (Date.now() - parsed.timestamp > SIX_MONTHS_MS) {
         localStorage.removeItem(STORAGE_KEY);
         return null;
@@ -67,17 +66,15 @@
     }
   }
 
-  function writeConsent(analytics: boolean) {
-    const state: ConsentState = { analytics, timestamp: Date.now() };
+  function writeConsent(analytics) {
+    const state = { analytics, timestamp: Date.now() };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     applyConsent(state);
   }
 
-  function applyConsent(state: ConsentState) {
-    // Hook extension pour activer Cloudflare Web Analytics ou equivalent
+  function applyConsent(state) {
     if (state.analytics) {
-      // Exemple : loader Cloudflare Analytics (Phase 2 pour vrai intégration)
-      // document.head.insertAdjacentHTML('beforeend', '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ...></script>');
+      // Phase 2 : loader Cloudflare Analytics ici
     }
   }
 

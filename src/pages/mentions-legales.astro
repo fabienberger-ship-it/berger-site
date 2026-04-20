@@ -16,17 +16,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section>
       <h2>1. Éditeur du site</h2>
       <p>
-        Le présent site est édité par <strong>Berger &amp; Associés</strong>, {{TO_CONFIRM: forme juridique}}
-        au capital social de {{TO_CONFIRM: capital}} euros, immatriculée au RCS de {{TO_CONFIRM: ville RCS}}
-        sous le numéro {{TO_CONFIRM: numéro RCS}} — SIRET {{TO_CONFIRM: numéro SIRET}}.
+        Le présent site est édité par <strong>Berger &amp; Associés</strong>, {'{{TO_CONFIRM: forme juridique}}'}
+        au capital social de {'{{TO_CONFIRM: capital}}'} euros, immatriculée au RCS de {'{{TO_CONFIRM: ville RCS}}'}
+        sous le numéro {'{{TO_CONFIRM: numéro RCS}}'} — SIRET {'{{TO_CONFIRM: numéro SIRET}}'}.
       </p>
       <p>
-        <strong>Siège social :</strong> {{TO_CONFIRM: adresse complète}}, Paris, France.<br>
-        <strong>Téléphone :</strong> {{TO_CONFIRM: numéro}} · <strong>Email :</strong>
+        <strong>Siège social :</strong> {'{{TO_CONFIRM: adresse complète}}'}, Paris, France.<br>
+        <strong>Téléphone :</strong> {'{{TO_CONFIRM: numéro}}'} · <strong>Email :</strong>
         <a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a>
       </p>
       <p>
-        <strong>Directeur de la publication :</strong> {{TO_CONFIRM: Fabien Berger / Sabine Tellier / Marine Gorin}}.
+        <strong>Directeur de la publication :</strong> {'{{TO_CONFIRM: Fabien Berger / Sabine Tellier / Marine Gorin}}'}.
       </p>
     </section>
 
@@ -50,10 +50,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>
           <strong>Conseiller en Investissements Financiers (CIF)</strong>, adhérent de la
           <strong>CNCGP</strong> (Chambre Nationale des Conseils en Gestion de Patrimoine),
-          association agréée par l'AMF. Numéro d'adhérent : {{TO_CONFIRM: numéro CNCGP}}.
+          association agréée par l'AMF. Numéro d'adhérent : {'{{TO_CONFIRM: numéro CNCGP}}'}.
         </li>
         <li>
-          <strong>Courtier en assurances</strong>, catégorie {{TO_CONFIRM: courtier / mandataire non exclusif / agent général}}.
+          <strong>Courtier en assurances</strong>, catégorie {'{{TO_CONFIRM: courtier / mandataire non exclusif / agent général}}'}.
         </li>
       </ul>
     </section>
@@ -77,8 +77,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>
         Conformément à l'article L. 541-3 du Code monétaire et financier, Berger &amp; Associés est couvert
         par une assurance de responsabilité civile professionnelle souscrite auprès de
-        <strong>{{TO_CONFIRM: nom assureur}}</strong>, police n° <strong>{{TO_CONFIRM: numéro police}}</strong>,
-        pour un plafond annuel de <strong>{{TO_CONFIRM: plafond en euros}} €</strong>.
+        <strong>{'{{TO_CONFIRM: nom assureur}}'}</strong>, police n° <strong>{'{{TO_CONFIRM: numéro police}}'}</strong>,
+        pour un plafond annuel de <strong>{'{{TO_CONFIRM: plafond en euros}}'} €</strong>.
       </p>
     </section>
 
@@ -93,7 +93,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </li>
         <li>
           <strong>Médiateur de la consommation</strong> désigné par la CNCGP :
-          {{TO_CONFIRM: nom + adresse + site du médiateur consommation}}.
+          {'{{TO_CONFIRM: nom + adresse + site du médiateur consommation}}'}.
         </li>
       </ul>
     </section>
@@ -132,7 +132,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <footer class="page-updated">
-      <p>Dernière mise à jour : {{TO_CONFIRM: date de mise en ligne, format JJ mois AAAA}}.</p>
+      <p>Dernière mise à jour : {'{{TO_CONFIRM: date de mise en ligne, format JJ mois AAAA}}'}.</p>
     </footer>
   </article>
 </BaseLayout>
