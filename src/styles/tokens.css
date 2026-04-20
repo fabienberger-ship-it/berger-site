@@ -4,7 +4,8 @@
   --c-ivoire: #FAF6EC;
   --c-navy: #14233A;
   --c-slate: #5F6574;
-  --c-gold: #B69153;
+  --c-gold: #B69153;         /* bright gold — decorative, dark bg only */
+  --c-gold-ink: #6F5424;     /* darker gold — body text on ivoire AND sand (WCAG AA) */
   --c-sand: #E8DEC9;
   --c-white: #FFFFFF;
 
@@ -12,7 +13,7 @@
   --c-bg: var(--c-ivoire);
   --c-fg: var(--c-navy);
   --c-fg-muted: var(--c-slate);
-  --c-accent: var(--c-gold);
+  --c-accent: var(--c-gold-ink);  /* text accent on light bg, passes WCAG AA */
   --c-divider: rgba(20, 35, 58, 0.12);
 
   /* Typography */
