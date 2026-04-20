@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 140" width="700" height="140">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;display=swap');
+      .wm { font-family: 'Inter', 'Helvetica Neue', sans-serif; font-weight: 600; fill: #14233A; letter-spacing: -0.035em; }
+      .sub { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; fill: #5F6574; }
+    </style>
+  </defs>
+  <text x="0" y="82" class="wm" font-size="76">Berger &amp; Associés</text>
+  <text x="2" y="118" class="sub">Conseil en gestion de patrimoine · Paris</text>
+</svg>

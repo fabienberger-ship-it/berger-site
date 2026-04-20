@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&amp;display=swap');
+      .mk { font-family: 'Fraunces', 'Georgia', serif; font-weight: 600; fill: #14233A; letter-spacing: -0.04em; }
+    </style>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#FAF6EC"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#14233A" stroke-width="1"/>
+  <text x="50%" y="58%" text-anchor="middle" class="mk" font-size="88" dominant-baseline="middle">b&amp;a</text>
+</svg>

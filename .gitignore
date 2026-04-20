@@ -1,0 +1,30 @@
+# Superpowers session state (local only)
+.superpowers/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Python scripts artifacts
+__pycache__/
+*.pyc
+.venv/
+
+# Large graphic sources (kept in Dropbox / local, not in git)
+assets/Nouveau Logo/
+
+# Generated / intermediate assets (regenerable)
+assets/logo-recolor/
+
+# Node (future Astro site)
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+
+# Build artifacts
+*.log
