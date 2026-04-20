@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Mentions légales — Berger & Associés"
-  description="Mentions légales du cabinet Berger & Associés, conseil en gestion de patrimoine à Paris : agréments, autorités de contrôle, procédure de réclamation."
+  description="Mentions légales du cabinet Berger & Associés : identification, agréments CIF / courtier / Carte T, autorités de contrôle, médiation."
   canonicalPath="/mentions-legales"
 >
   <article class="page page-legal container">
@@ -14,125 +14,223 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </header>
 
     <section>
-      <h2>1. Éditeur du site</h2>
+      <h2>I. Informations légales</h2>
+
+      <h3>1. Identification de la société</h3>
+      <ul class="kv">
+        <li><strong>Raison sociale :</strong> BERGER ET ASSOCIES</li>
+        <li><strong>Forme juridique :</strong> Société à Responsabilité Limitée (SARL)</li>
+        <li><strong>Capital social :</strong> 2 000 €</li>
+        <li><strong>Siège social :</strong> Péniche Le Viking, 4 allée de l'Écluse, 92800 Puteaux</li>
+        <li><strong>Adresse des bureaux :</strong> 96 boulevard Sébastopol, 75003 Paris</li>
+        <li><strong>Numéro d'inscription au RCS :</strong> 791 895 469 R.C.S. Nanterre</li>
+        <li><strong>Numéro SIREN :</strong> 791 895 469</li>
+        <li><strong>Code NAF :</strong> 6622Z</li>
+        <li><strong>Numéro de TVA intracommunautaire :</strong> FR55 791 895 469</li>
+        <li><strong>Gérance :</strong> Fabien Berger, Sabine Tellier, Marine Gorin</li>
+      </ul>
+
+      <h3>2. Directrice de la publication</h3>
       <p>
-        Le présent site est édité par <strong>Berger &amp; Associés</strong>, {'{{TO_CONFIRM: forme juridique}}'}
-        au capital social de {'{{TO_CONFIRM: capital}}'} euros, immatriculée au RCS de {'{{TO_CONFIRM: ville RCS}}'}
-        sous le numéro {'{{TO_CONFIRM: numéro RCS}}'} — SIRET {'{{TO_CONFIRM: numéro SIRET}}'}.
+        Sabine Tellier — <a href="mailto:sabine.tellier@berger-associes.fr">sabine.tellier@berger-associes.fr</a>
+      </p>
+
+      <h3>3. Hébergement du site</h3>
+      <p>
+        Le site est hébergé par <strong>Cloudflare, Inc.</strong>, 101 Townsend Street,
+        San Francisco, CA 94107, États-Unis. Téléphone : +1 (888) 993-5273 —
+        <a href="https://www.cloudflare.com" rel="noopener" target="_blank">cloudflare.com</a>.
+      </p>
+
+      <h3>4. Création et réalisation du site</h3>
+      <p>
+        Wasabee Consulting (powered by OAK Invest) — <a href="mailto:contact@wasabee-consulting.com">contact@wasabee-consulting.com</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>II. Activités réglementées et autorités de contrôle</h2>
+      <p>Berger &amp; Associés exerce les activités suivantes :</p>
+
+      <h3>Conseil en Investissement Financier (CIF)</h3>
+      <ul>
+        <li>
+          Immatriculation au registre unique des intermédiaires en assurance, banque et finance
+          (ORIAS) sous le numéro <strong>13004419</strong>
+          (<a href="https://www.orias.fr" rel="noopener" target="_blank">www.orias.fr</a>).
+        </li>
+        <li>
+          Adhérent de la <strong>Chambre Nationale des Conseils en Gestion de Patrimoine (CNCGP)</strong>,
+          association professionnelle agréée par l'Autorité des Marchés Financiers.
+        </li>
+        <li>
+          Sous le contrôle de l'<strong>Autorité des Marchés Financiers (AMF)</strong> —
+          17 place de la Bourse, 75082 Paris Cedex 02 —
+          <a href="https://www.amf-france.org" rel="noopener" target="_blank">www.amf-france.org</a>.
+        </li>
+      </ul>
+
+      <h3>Courtage en assurance</h3>
+      <ul>
+        <li>
+          Immatriculation ORIAS sous le numéro <strong>13004419</strong>
+          (<a href="https://www.orias.fr" rel="noopener" target="_blank">www.orias.fr</a>),
+          catégorie <strong>COA</strong> (Courtier d'assurance ou de réassurance).
+        </li>
+        <li>
+          Sous le contrôle de l'<strong>Autorité de Contrôle Prudentiel et de Résolution (ACPR)</strong> —
+          4 Place de Budapest, CS 92459, 75436 Paris Cedex 09 —
+          <a href="https://acpr.banque-france.fr" rel="noopener" target="_blank">www.acpr.banque-france.fr</a>.
+        </li>
+        <li>
+          Encaissement de fonds non autorisé (conformément à l'article L.512-7 du Code des assurances).
+        </li>
+      </ul>
+
+      <h3>Transactions sur immeubles et fonds de commerce</h3>
+      <ul>
+        <li>
+          Titulaire de la <strong>Carte professionnelle Transaction</strong> (Carte T)
+          n° <strong>CPI 7501 2017 000 015 833</strong> délivrée par la CCI de Paris Île-de-France.
+        </li>
+        <li>
+          {'{{TO_CONFIRM: garant financier — nom et adresse, ou mention « sans perception de fonds » si applicable}}'}
+        </li>
+      </ul>
+
+      <h3>Mandataire d'intermédiaire en opérations de banque et en services de paiement (MIOBSP)</h3>
+      <ul>
+        <li>Immatriculation ORIAS n° <strong>13004419</strong>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>III. Assurance en responsabilité civile professionnelle</h2>
+      <p>
+        Conformément à la réglementation en vigueur (articles L.541-3 du Code monétaire et financier
+        et L.512-6 du Code des assurances), Berger &amp; Associés a souscrit un contrat d'assurance
+        en responsabilité civile professionnelle couvrant l'ensemble de ses activités auprès de :
+      </p>
+      <ul class="kv">
+        <li><strong>Compagnie :</strong> {'{{TO_CONFIRM: nom compagnie — MMA IARD, CGPA, ou autre}}'}</li>
+        <li><strong>Numéro de police :</strong> {'{{TO_CONFIRM: numéro de police}}'}</li>
+        <li><strong>Couverture territoriale :</strong> France</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>IV. Médiation de la consommation</h2>
+      <p>
+        Conformément aux articles L.611-1 et suivants du Code de la consommation, en cas de litige
+        non résolu par une réclamation préalable auprès du cabinet, le client consommateur peut
+        recourir gratuitement au médiateur compétent :
+      </p>
+
+      <h3>Pour les activités CIF et courtage en assurance</h3>
+      <ul>
+        <li>
+          <strong>Médiateur de l'AMF</strong> — 17 place de la Bourse, 75082 Paris Cedex 02 —
+          <a href="https://www.amf-france.org/fr/le-mediateur-de-l-amf" rel="noopener" target="_blank">www.amf-france.org/Le-mediateur-de-l-AMF</a>.
+        </li>
+        <li>
+          <strong>Médiateur de l'Assurance</strong> — TSA 50110, 75441 Paris Cedex 09 —
+          <a href="https://www.mediation-assurance.org" rel="noopener" target="_blank">www.mediation-assurance.org</a>.
+        </li>
+      </ul>
+
+      <h3>Pour l'activité de transaction immobilière</h3>
+      <ul>
+        <li>
+          <strong>Médiateur du CNTGI</strong> (Conseil National de la Transaction et de la Gestion Immobilières) —
+          {'{{TO_CONFIRM: coordonnées exactes selon adhésion choisie}}'}.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>V. Conditions d'utilisation</h2>
+      <p>
+        L'utilisation de ce site web implique l'acceptation des présentes conditions d'utilisation.
+        Ces conditions peuvent être modifiées ou complétées à tout moment ; les utilisateurs du site
+        sont donc invités à les consulter régulièrement.
+      </p>
+    </section>
+
+    <section>
+      <h2>VI. Données personnelles</h2>
+      <p>
+        En conformité avec la loi Informatique et Libertés du 6 janvier 1978 modifiée et le
+        Règlement général sur la protection des données (RGPD — Règlement UE 2016/679), toutes
+        les données personnelles recueillies sur le site sont traitées avec la plus stricte confidentialité.
       </p>
       <p>
-        <strong>Siège social :</strong> {'{{TO_CONFIRM: adresse complète}}'}, Paris, France.<br>
-        <strong>Téléphone :</strong> {'{{TO_CONFIRM: numéro}}'} · <strong>Email :</strong>
+        Vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité, de
+        limitation et d'opposition concernant les données qui vous concernent. Ces droits peuvent
+        être exercés à tout moment auprès de :
+      </p>
+      <p>
+        <strong>Berger &amp; Associés</strong> — 96 boulevard Sébastopol, 75003 Paris —
         <a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a>
       </p>
       <p>
-        <strong>Directeur de la publication :</strong> {'{{TO_CONFIRM: Fabien Berger / Sabine Tellier / Marine Gorin}}'}.
+        En cas de réclamation, vous pouvez également saisir la
+        <strong>Commission nationale de l'informatique et des libertés (CNIL)</strong> —
+        <a href="https://www.cnil.fr" rel="noopener" target="_blank">www.cnil.fr</a>.
+      </p>
+      <p>
+        Voir également notre <a href="/confidentialite">politique de confidentialité</a> détaillée.
       </p>
     </section>
 
     <section>
-      <h2>2. Hébergeur</h2>
+      <h2>VII. Propriété intellectuelle</h2>
       <p>
-        Le site est hébergé par <strong>Cloudflare, Inc.</strong>, 101 Townsend Street,
-        San Francisco, CA 94107, États-Unis. Téléphone : +1 (888) 993-5273 · Site :
-        <a href="https://www.cloudflare.com" rel="noopener" target="_blank">cloudflare.com</a>.
+        L'ensemble de ce site relève de la législation française et internationale sur le droit
+        d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés,
+        y compris pour les documents téléchargeables et les représentations iconographiques et
+        photographiques.
+      </p>
+      <p>
+        La reproduction de tout ou partie de ce site sur un support électronique, quel qu'il soit,
+        est formellement interdite sauf autorisation écrite de la Directrice de la publication.
+      </p>
+      <p>Photos réalisées par Lucas Marrella.</p>
+    </section>
+
+    <section>
+      <h2>VIII. Limitation de responsabilité</h2>
+      <p>
+        Berger &amp; Associés ne peut être tenu pour responsable des erreurs rencontrées sur le site,
+        des problèmes techniques, de l'interprétation des informations publiées ni des conséquences
+        de leur utilisation. L'utilisateur reconnaît utiliser ces informations sous sa responsabilité
+        exclusive.
       </p>
     </section>
 
     <section>
-      <h2>3. Statuts professionnels et agréments</h2>
+      <h2>IX. Liens hypertextes</h2>
       <p>
-        Berger &amp; Associés est immatriculé à l'ORIAS (Organisme pour le Registre unique des Intermédiaires
-        en Assurance, Banque et Finance) sous le numéro <strong>13004419</strong>, au titre des activités
-        suivantes (vérifiables sur <a href="https://www.orias.fr" rel="noopener" target="_blank">www.orias.fr</a>) :
-      </p>
-      <ul>
-        <li>
-          <strong>Conseiller en Investissements Financiers (CIF)</strong>, adhérent de la
-          <strong>CNCGP</strong> (Chambre Nationale des Conseils en Gestion de Patrimoine),
-          association agréée par l'AMF. Numéro d'adhérent : {'{{TO_CONFIRM: numéro CNCGP}}'}.
-        </li>
-        <li>
-          <strong>Courtier en assurances</strong>, catégorie {'{{TO_CONFIRM: courtier / mandataire non exclusif / agent général}}'}.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Autorités de contrôle</h2>
-      <p>
-        L'activité de Conseiller en Investissements Financiers est placée sous le contrôle de l'<strong>Autorité
-        des Marchés Financiers (AMF)</strong>, 17 place de la Bourse, 75082 Paris cedex 02 —
-        <a href="https://www.amf-france.org" rel="noopener" target="_blank">amf-france.org</a>.
-      </p>
-      <p>
-        L'activité de courtier en assurances est placée sous le contrôle de l'<strong>Autorité de Contrôle
-        Prudentiel et de Résolution (ACPR)</strong>, 4 place de Budapest, CS 92459, 75436 Paris cedex 09 —
-        <a href="https://acpr.banque-france.fr" rel="noopener" target="_blank">acpr.banque-france.fr</a>.
+        Les liens hypertextes mis en place dans le cadre du présent site internet en direction d'autres
+        ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de
+        Berger &amp; Associés.
       </p>
     </section>
 
     <section>
-      <h2>5. Responsabilité civile professionnelle</h2>
+      <h2>X. Cookies</h2>
       <p>
-        Conformément à l'article L. 541-3 du Code monétaire et financier, Berger &amp; Associés est couvert
-        par une assurance de responsabilité civile professionnelle souscrite auprès de
-        <strong>{'{{TO_CONFIRM: nom assureur}}'}</strong>, police n° <strong>{'{{TO_CONFIRM: numéro police}}'}</strong>,
-        pour un plafond annuel de <strong>{'{{TO_CONFIRM: plafond en euros}}'} €</strong>.
+        Le site Berger &amp; Associés peut être amené à vous demander l'acceptation de cookies à des
+        fins de statistiques et d'affichage. Un cookie est une information déposée sur votre disque
+        dur par le serveur du site que vous visitez. Vous pouvez à tout moment paramétrer votre
+        navigateur pour les refuser.
       </p>
-    </section>
-
-    <section>
-      <h2>6. Médiation</h2>
-      <p>En cas de litige non résolu par les voies amiables internes, le client peut saisir :</p>
-      <ul>
-        <li>
-          <strong>Médiateur de l'AMF</strong>, 17 place de la Bourse, 75082 Paris cedex 02 —
-          <a href="https://www.amf-france.org/fr/le-mediateur-de-l-amf" rel="noopener" target="_blank">formulaire en ligne</a>.
-          Pour les litiges portant sur l'activité de conseil en investissements.
-        </li>
-        <li>
-          <strong>Médiateur de la consommation</strong> désigné par la CNCGP :
-          {'{{TO_CONFIRM: nom + adresse + site du médiateur consommation}}'}.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>7. Procédure de réclamation</h2>
       <p>
-        Toute réclamation peut être adressée par courrier recommandé au siège social ou par email à
-        <a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a>. Berger &amp; Associés
-        s'engage à :
-      </p>
-      <ul>
-        <li>accuser réception de la réclamation sous <strong>10 jours ouvrés</strong> ;</li>
-        <li>apporter une réponse sur le fond dans un délai maximal de <strong>2 mois</strong> à compter de la réception ;</li>
-        <li>informer le client de la possibilité de saisir le médiateur en cas de désaccord persistant.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>8. Propriété intellectuelle</h2>
-      <p>
-        L'ensemble du contenu du site (textes, images, graphismes, logo, icônes, sons, logiciels) est
-        la propriété exclusive de Berger &amp; Associés, à l'exception des marques, logos ou contenus
-        appartenant à d'autres sociétés partenaires ou auteurs. Toute reproduction, distribution,
-        modification ou utilisation de ces éléments sans autorisation préalable est strictement interdite.
-      </p>
-    </section>
-
-    <section>
-      <h2>9. Données personnelles et cookies</h2>
-      <p>
-        Le traitement des données personnelles collectées sur ce site est décrit dans notre
-        <a href="/confidentialite">politique de confidentialité</a>. L'utilisation des cookies est
-        détaillée dans notre <a href="/cookies">politique cookies</a>.
+        Voir également notre <a href="/cookies">politique cookies</a>.
       </p>
     </section>
 
     <footer class="page-updated">
-      <p>Dernière mise à jour : {'{{TO_CONFIRM: date de mise en ligne, format JJ mois AAAA}}'}.</p>
+      <p>Dernière mise à jour : 20 avril 2026.</p>
     </footer>
   </article>
 </BaseLayout>
@@ -165,7 +263,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-family: var(--ff-serif);
     font-size: var(--fs-xl);
     font-weight: 500;
-    margin-bottom: var(--s-2);
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-3);
+  }
+  .page-legal h3 {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    margin-top: var(--s-3);
+    margin-bottom: var(--s-1);
+    color: var(--c-fg);
   }
   .page-legal p, .page-legal li {
     color: var(--c-fg-muted);
@@ -174,6 +281,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-block: var(--s-2);
   }
   .page-legal ul { padding-left: var(--s-3); }
+  .page-legal ul.kv { list-style: none; padding-left: 0; }
+  .page-legal ul.kv li { margin-block: var(--s-1); }
   .page-updated {
     margin-top: var(--s-6);
     padding-top: var(--s-3);

@@ -13,7 +13,8 @@ const year = new Date().getFullYear();
       <h2 class="site-footer__h">Contact</h2>
       <ul class="site-footer__list">
         <li><a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a></li>
-        <li>Paris · France</li>
+        <li>96 boulevard Sébastopol</li>
+        <li>75003 Paris</li>
       </ul>
     </div>
 
@@ -33,6 +34,14 @@ const year = new Date().getFullYear();
         <li><a href="/confidentialite">Politique de confidentialité</a></li>
         <li><a href="/cookies">Politique cookies</a></li>
       </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__regulatory">
+    <div class="container-wide">
+      <p>
+        Berger &amp; Associés — SARL au capital de 2 000 € — RCS Nanterre 791 895 469 — Siège social : Péniche Le Viking, 4 allée de l'Écluse, 92800 Puteaux — Bureaux : 96 boulevard Sébastopol, 75003 Paris. Courtier en assurances et Conseil en Investissement Financier (CIF) immatriculé à l'ORIAS sous le n° 13004419 (<a href="https://www.orias.fr" rel="noopener" target="_blank">www.orias.fr</a>). Titulaire de la Carte Professionnelle Transaction n° CPI 7501 2017 000 015 833 délivrée par la CCI de Paris Île-de-France. Adhérent de la Chambre Nationale des Conseils en Gestion de Patrimoine (CNCGP), association professionnelle agréée par l'AMF. Activités sous le contrôle de l'AMF (17 place de la Bourse, 75082 Paris Cedex 02) et de l'ACPR (4 Place de Budapest, 75436 Paris Cedex 09).
+      </p>
     </div>
   </div>
 
@@ -85,6 +94,26 @@ const year = new Date().getFullYear();
   }
 
   .site-footer__list a:hover { opacity: 1; }
+
+  .site-footer__regulatory {
+    border-top: 1px solid rgba(250, 246, 236, 0.1);
+    padding-block: var(--s-3);
+    font-size: 0.7rem;
+    line-height: 1.55;
+    color: rgba(250, 246, 236, 0.55);
+  }
+
+  .site-footer__regulatory p {
+    max-width: 100%;
+    text-align: justify;
+    text-wrap: pretty;
+  }
+
+  .site-footer__regulatory a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 
   .site-footer__bar {
     border-top: 1px solid rgba(250, 246, 236, 0.1);
