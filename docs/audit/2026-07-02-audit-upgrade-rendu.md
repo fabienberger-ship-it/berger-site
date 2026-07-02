@@ -60,3 +60,19 @@
 ### Décisions ouvertes (rappel spec §16)
 
 Directeur de publication définitif, DPO, catégorie courtier précise, relecture Vie Legia, droits Sud Radio, cohérence des séances photo.
+
+---
+
+## 4. Révision post-validation — direction « Institutionnel épuré » (même jour)
+
+Retour de Fabien sur la V1 de l'upgrade : rendu jugé enfantin (médaillons à initiales,
+monogramme CSS, filigrane, cartes à survol) et textes trop slogan. Décision actée :
+
+- **Visuel** : fond ivoire dominant, mise en page typographique à filets fins, esprit
+  étude notariale. Suppression des médaillons, du monogramme maison, du filigrane,
+  des cartes et de toutes les animations décoratives. Wordmark seul en attendant
+  le SVG définitif du graphiste.
+- **Associés** : liste typographique (nom / fonction / email), type masthead.
+- **Textes** : ton factuel et institutionnel. Suppression de « un cabinet en partage »,
+  « ils nous rencontrent en personne, et ils restent » et de la note « version complète
+  prochainement ».

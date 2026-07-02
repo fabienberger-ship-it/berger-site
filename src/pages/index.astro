@@ -2,69 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const associates = [
-  {
-    name: 'Fabien Berger',
-    role: 'Associé fondateur',
-    mailto: 'fabien.berger@berger-associes.fr',
-    initials: 'FB',
-  },
-  {
-    name: 'Sabine Tellier',
-    role: 'Associée',
-    mailto: 'sabine.tellier@berger-associes.fr',
-    initials: 'ST',
-  },
-  {
-    name: 'Marine Gorin',
-    role: 'Associée',
-    mailto: 'marine.gorin@berger-associes.fr',
-    initials: 'MG',
-  },
+  { name: 'Fabien Berger', role: 'Associé fondateur', mailto: 'fabien.berger@berger-associes.fr' },
+  { name: 'Sabine Tellier', role: 'Associée', mailto: 'sabine.tellier@berger-associes.fr' },
+  { name: 'Marine Gorin', role: 'Associée', mailto: 'marine.gorin@berger-associes.fr' },
 ];
 ---
 
 <BaseLayout
   title="Berger & Associés — Conseil en gestion de patrimoine, Paris"
-  description="Cabinet indépendant de conseil en gestion de patrimoine, Paris. Trois associés, une relation long terme. Depuis 2013."
+  description="Berger & Associés, cabinet indépendant de conseil en gestion de patrimoine à Paris. Trois associés. Fondé en 2013."
 >
   <section class="hero">
-    <div class="hero__watermark" aria-hidden="true">b&amp;a</div>
-    <div class="container hero__content">
-      <p class="eyebrow hero__eyebrow" data-reveal>
+    <div class="container">
+      <p class="eyebrow">
         <span class="rule-gold" aria-hidden="true"></span>
-        Cabinet de conseil en gestion de patrimoine · Paris
+        Cabinet indépendant · Paris
       </p>
 
-      <h1 class="hero__title editorial" data-reveal style="--reveal-delay: 0.08s">
-        Trois associés à Paris,<br>un cabinet en partage.
-      </h1>
+      <h1 class="hero__title editorial">Conseil en gestion de patrimoine.</h1>
 
-      <p class="hero__lead" data-reveal style="--reveal-delay: 0.16s">
-        Fabien Berger, Sabine Tellier, Marine Gorin. Nos clients nous arrivent par recommandation
-        depuis 2013. Ils nous rencontrent en personne, et ils restent.
+      <p class="hero__lead">
+        Berger &amp; Associés est un cabinet indépendant fondé en 2013. Trois associés
+        accompagnent particuliers et familles dans la durée. Notre clientèle nous est
+        adressée par recommandation.
       </p>
 
-      <div class="hero__actions" data-reveal style="--reveal-delay: 0.24s">
-        <a href="mailto:contact@berger-associes.fr" class="btn btn--ivoire">Nous contacter</a>
-        <a href="#associes" class="hero__link">Rencontrer les associés</a>
-      </div>
-    </div>
-
-    <div class="hero__trust">
-      <div class="container">
-        <ul class="hero__trust-list">
-          <li>Depuis 2013</li>
-          <li>ORIAS n° 13004419</li>
-          <li>Membre CNCGP</li>
-          <li>Sous contrôle ACPR / AMF</li>
-        </ul>
+      <div class="hero__actions">
+        <a href="mailto:contact@berger-associes.fr" class="btn btn--navy">Nous contacter</a>
       </div>
     </div>
   </section>
 
+  <div class="container">
+    <ul class="credentials" aria-label="Agréments du cabinet">
+      <li>Depuis 2013</li>
+      <li>ORIAS n° 13004419</li>
+      <li>Membre CNCGP</li>
+      <li>Sous contrôle ACPR / AMF</li>
+    </ul>
+  </div>
+
   <section class="associates" id="associes">
     <div class="container">
-      <header class="section-head" data-reveal>
+      <header class="section-head">
         <p class="eyebrow">
           <span class="rule-gold" aria-hidden="true"></span>
           Le cabinet
@@ -72,288 +52,170 @@ const associates = [
         <h2 class="section-head__title editorial">Les associés</h2>
       </header>
 
-      <ul class="associates__grid">
-        {associates.map(({ name, role, mailto, initials }, i) => (
-          <li class="associate" data-reveal style={`--reveal-delay: ${i * 0.09}s`}>
-            <div class="associate__portrait" aria-hidden="true">
-              <span class="associate__initials editorial">{initials}</span>
-            </div>
-            <h3 class="associate__name editorial">{name}</h3>
-            <p class="associate__role">{role}</p>
-            <p class="associate__email">
+      <ul class="masthead">
+        {associates.map(({ name, role, mailto }) => (
+          <li class="masthead__row">
+            <h3 class="masthead__name editorial">{name}</h3>
+            <p class="masthead__role">{role}</p>
+            <p class="masthead__email">
               <a href={`mailto:${mailto}`}>{mailto}</a>
             </p>
           </li>
         ))}
       </ul>
-
-      <p class="associates__note" data-reveal>
-        La version complète du site, avec les biographies, méthodes et journal des associés,
-        sera mise en ligne prochainement. Pour un rendez-vous ou une demande d'information,
-        contactez-nous par email ou directement un associé.
-      </p>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <div class="contact__filet" aria-hidden="true"></div>
     <div class="container contact__inner">
-      <div class="contact__intro" data-reveal>
+      <div class="contact__intro">
         <p class="eyebrow">
           <span class="rule-gold" aria-hidden="true"></span>
           Contact
         </p>
         <h2 class="contact__title editorial">Nous rencontrer</h2>
         <p class="contact__text">
-          Premier rendez-vous sans engagement, à notre cabinet ou en visioconférence. Nous
-          établissons ensemble le périmètre de votre demande avant tout engagement commercial.
+          Le premier rendez-vous se tient à notre cabinet ou en visioconférence. Il est sans
+          engagement : nous définissons ensemble le périmètre de votre demande avant toute mission.
         </p>
       </div>
 
-      <div class="contact__card" data-reveal style="--reveal-delay: 0.12s">
-        <dl class="contact__details">
-          <div>
-            <dt>Email du cabinet</dt>
-            <dd><a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a></dd>
-          </div>
-          <div>
-            <dt>Adresse</dt>
-            <dd>96 boulevard Sébastopol<br>75003 Paris</dd>
-          </div>
-        </dl>
-        <a href="mailto:contact@berger-associes.fr" class="btn btn--navy contact__cta">
-          Prendre rendez-vous
-        </a>
-      </div>
+      <dl class="contact__details">
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a></dd>
+        </div>
+        <div>
+          <dt>Adresse</dt>
+          <dd>96 boulevard Sébastopol<br>75003 Paris</dd>
+        </div>
+      </dl>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* ————— Hero — composition navy validée (V1B) ————— */
+  /* ————— Hero ————— */
   .hero {
-    position: relative;
-    background:
-      radial-gradient(120% 140% at 85% -10%, rgba(182, 145, 83, 0.12) 0%, transparent 45%),
-      linear-gradient(165deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
-    color: var(--c-ivoire);
-    overflow: hidden;
+    padding-block: clamp(var(--s-6), 12vh, calc(var(--s-7) + var(--s-5))) var(--s-6);
   }
 
-  .hero__watermark {
-    position: absolute;
-    right: -0.12em;
-    bottom: -0.34em;
-    font-family: var(--ff-serif);
-    font-weight: 600;
-    font-size: clamp(16rem, 34vw, 30rem);
-    line-height: 1;
-    letter-spacing: -0.06em;
-    color: rgba(250, 246, 236, 0.035);
-    user-select: none;
-    pointer-events: none;
-  }
-
-  .hero__content {
-    position: relative;
-    padding-block: clamp(var(--s-6), 10vh, calc(var(--s-7) + var(--s-4))) var(--s-6);
-  }
-
-  .hero__eyebrow {
-    color: var(--c-gold);
-    margin-bottom: var(--s-3);
-  }
+  .hero .eyebrow { margin-bottom: var(--s-3); }
 
   .hero__title {
-    font-size: clamp(var(--fs-3xl), 7vw, var(--fs-5xl));
+    font-size: clamp(var(--fs-3xl), 6.5vw, var(--fs-4xl));
     line-height: var(--lh-tight);
-    letter-spacing: -0.03em;
-    color: var(--c-ivoire);
+    letter-spacing: -0.025em;
+    color: var(--c-fg);
     margin-bottom: var(--s-3);
     font-weight: 600;
+    max-width: 18ch;
     text-wrap: balance;
   }
 
   .hero__lead {
-    font-size: clamp(var(--fs-lg), 2.2vw, var(--fs-xl));
-    line-height: var(--lh-normal);
-    color: var(--c-ivoire-veil);
-    max-width: 620px;
+    font-size: clamp(var(--fs-base), 1.8vw, var(--fs-lg));
+    line-height: var(--lh-loose);
+    color: var(--c-fg-muted);
+    max-width: 560px;
     margin-bottom: var(--s-5);
   }
 
-  .hero__actions {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--s-3);
-  }
-
-  .hero__link {
-    color: var(--c-gold);
-    font-size: var(--fs-sm);
-    letter-spacing: 0.04em;
-    text-decoration-color: rgba(182, 145, 83, 0.4);
-  }
-
-  .hero__link:hover { opacity: 1; text-decoration-color: var(--c-gold); }
-  .hero__link:focus-visible { outline-color: var(--c-gold); }
-
-  .hero__trust {
-    position: relative;
-    border-top: 1px solid rgba(250, 246, 236, 0.12);
-    padding-block: var(--s-3);
-  }
-
-  .hero__trust-list {
+  /* ————— Agréments ————— */
+  .credentials {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--s-2) var(--s-4);
+    gap: var(--s-2) var(--s-5);
+    padding-block: var(--s-3);
+    border-block: 1px solid var(--c-divider);
     font-size: var(--fs-xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--c-ivoire-veil);
+    color: var(--c-fg-muted);
   }
 
-  /* ————— Section head partagé ————— */
-  .section-head {
-    margin-bottom: var(--s-5);
-  }
+  /* ————— Sections ————— */
+  .section-head { margin-bottom: var(--s-5); }
 
-  .section-head__title {
+  .section-head__title,
+  .contact__title {
     font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
     font-weight: 600;
     margin-top: var(--s-2);
   }
 
-  /* ————— Associés ————— */
+  /* ————— Les associés — liste typographique ————— */
   .associates {
     padding-block: var(--s-7) var(--s-6);
   }
 
-  .associates__grid {
+  .masthead {
     list-style: none;
+    border-top: 1px solid var(--c-divider);
+  }
+
+  .masthead__row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-4);
-    margin-bottom: var(--s-4);
+    grid-template-columns: 1.2fr 0.8fr auto;
+    align-items: baseline;
+    gap: var(--s-3);
+    padding-block: var(--s-3);
+    border-bottom: 1px solid var(--c-divider);
   }
 
-  .associate {
-    text-align: center;
-    background: var(--c-white);
-    border: 1px solid var(--c-divider);
-    border-radius: var(--radius-md);
-    padding: var(--s-5) var(--s-3) var(--s-4);
-    transition:
-      transform var(--dur-normal) var(--ease-standard),
-      box-shadow var(--dur-normal) var(--ease-standard);
-  }
-
-  .associate:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .associate__portrait {
-    width: 116px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background: linear-gradient(160deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
-    box-shadow: inset 0 0 0 2px var(--c-gold), inset 0 0 0 5px var(--c-navy);
-    margin: 0 auto var(--s-3);
-    display: grid;
-    place-items: center;
-  }
-
-  .associate__initials {
-    color: var(--c-ivoire);
-    font-size: var(--fs-2xl);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-
-  .associate__name {
+  .masthead__name {
     font-size: var(--fs-xl);
     font-weight: 500;
-    margin-bottom: var(--s-1);
+    letter-spacing: -0.01em;
   }
 
-  .associate__role {
+  .masthead__role {
     font-size: var(--fs-xs);
     text-transform: uppercase;
     letter-spacing: 0.16em;
     color: var(--c-accent);
-    margin-bottom: var(--s-2);
   }
 
-  .associate__email {
+  .masthead__email {
     font-size: var(--fs-sm);
+    justify-self: end;
   }
 
-  .associate__email a {
-    color: var(--c-fg);
-    opacity: 0.7;
-    text-decoration: none;
-    transition: opacity var(--dur-fast) var(--ease-standard);
-  }
-  .associate__email a:hover { opacity: 1; }
-
-  .associates__note {
-    font-size: var(--fs-sm);
+  .masthead__email a {
     color: var(--c-fg-muted);
-    text-align: center;
-    font-style: italic;
-    max-width: 600px;
-    margin: var(--s-4) auto 0;
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-standard);
   }
+
+  .masthead__email a:hover { color: var(--c-fg); opacity: 1; }
 
   /* ————— Contact ————— */
   .contact {
-    background: var(--c-sand);
-  }
-
-  .contact__filet {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--c-gold) 18%, var(--c-gold) 82%, transparent);
-    opacity: 0.55;
+    border-top: 1px solid var(--c-divider);
   }
 
   .contact__inner {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
     gap: var(--s-6);
-    align-items: center;
     padding-block: var(--s-6) var(--s-7);
   }
 
-  .contact__title {
-    font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
-    font-weight: 600;
-    margin-block: var(--s-2) var(--s-3);
-  }
+  .contact__title { margin-bottom: var(--s-3); }
 
   .contact__text {
-    color: var(--c-fg);
-    opacity: 0.85;
+    color: var(--c-fg-muted);
     font-size: var(--fs-base);
     line-height: var(--lh-loose);
     max-width: 480px;
   }
 
-  .contact__card {
-    background: var(--c-ivoire);
-    border: 1px solid rgba(20, 35, 58, 0.08);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    padding: var(--s-4);
-  }
-
   .contact__details {
     display: grid;
     gap: var(--s-3);
-    margin-bottom: var(--s-4);
+    align-content: start;
+    padding-top: calc(var(--s-2) + 2.4rem); /* aligne sur le titre, sous l'eyebrow */
   }
 
   .contact__details dt {
@@ -361,7 +223,7 @@ const associates = [
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--c-accent);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.3rem;
   }
 
   .contact__details dd {
@@ -375,16 +237,14 @@ const associates = [
     text-decoration-color: rgba(20, 35, 58, 0.3);
   }
 
-  .contact__cta { width: 100%; }
-
   /* ————— Responsive ————— */
-  @media (max-width: 900px) {
-    .contact__inner { grid-template-columns: 1fr; gap: var(--s-4); }
-    .contact__card { max-width: 480px; }
-  }
-
   @media (max-width: 720px) {
-    .associates__grid { grid-template-columns: 1fr; gap: var(--s-3); max-width: 420px; margin-inline: auto; }
-    .hero__watermark { font-size: 18rem; right: -0.2em; }
+    .masthead__row {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    .masthead__email { justify-self: start; }
+    .contact__inner { grid-template-columns: 1fr; gap: var(--s-4); }
+    .contact__details { padding-top: 0; }
   }
 </style>
