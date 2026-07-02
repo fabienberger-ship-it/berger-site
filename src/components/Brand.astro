@@ -1,7 +1,6 @@
 ---
-// Lockup de marque vectoriel (monogramme + wordmark + tagline optionnel).
-// Remplace les PNG recolorés (halo gris résiduel, illisibles en petite taille)
-// en attendant le SVG définitif du graphiste — net à toute résolution.
+// Wordmark typographique seul — pas de monogramme tant que le SVG définitif
+// du graphiste n'est pas livré. Net à toute résolution, aucun artifice.
 interface Props {
   tone?: 'light' | 'dark'; // light = sur fond ivoire, dark = sur fond navy
   tagline?: boolean;
@@ -11,68 +10,27 @@ const { tone = 'light', tagline = false } = Astro.props;
 ---
 
 <span class:list={['brand', `brand--${tone}`]}>
-  <span class="brand__mark" aria-hidden="true">b<span class="brand__amp">&amp;</span>a</span>
-  <span class="brand__text">
-    <span class="brand__word">Berger <span class="brand__word-amp">&amp;</span> Associés</span>
-    {tagline && <span class="brand__tagline">Conseil en gestion de patrimoine · Paris</span>}
-  </span>
+  <span class="brand__word">Berger <span class="brand__amp">&amp;</span> Associés</span>
+  {tagline && <span class="brand__tagline">Conseil en gestion de patrimoine</span>}
 </span>
 
 <style>
   .brand {
     display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-  }
-
-  .brand__mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    flex: none;
-    border-radius: 50%;
-    font-family: var(--ff-serif);
-    font-weight: 600;
-    font-size: 1.15rem;
-    letter-spacing: -0.05em;
-    padding-bottom: 0.15em; /* recentre optiquement les descendantes b/a */
-  }
-
-  .brand__amp {
-    font-size: 0.8em;
-    transform: translateY(-0.05em);
-  }
-
-  .brand--light .brand__mark {
-    background: var(--c-navy);
-    color: var(--c-ivoire);
-    box-shadow: 0 0 0 1px var(--c-navy), inset 0 0 0 1.5px var(--c-navy), inset 0 0 0 2.5px var(--c-gold);
-  }
-
-  .brand--dark .brand__mark {
-    background: transparent;
-    color: var(--c-ivoire);
-    box-shadow: inset 0 0 0 1px var(--c-gold);
-  }
-
-  .brand__text {
-    display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.3rem;
   }
 
   .brand__word {
     font-family: var(--ff-serif);
     font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 0.01em;
+    font-size: 1.25rem;
+    letter-spacing: 0.015em;
     line-height: 1;
     white-space: nowrap;
   }
 
-  .brand__word-amp { color: var(--c-gold); }
+  .brand__amp { color: var(--c-gold); }
 
   .brand--light .brand__word { color: var(--c-navy); }
   .brand--dark .brand__word { color: var(--c-ivoire); }
@@ -80,11 +38,11 @@ const { tone = 'light', tagline = false } = Astro.props;
   .brand__tagline {
     font-family: var(--ff-sans);
     font-size: 0.575rem;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     white-space: nowrap;
   }
 
-  .brand--light .brand__tagline { color: var(--c-accent); }
+  .brand--light .brand__tagline { color: var(--c-fg-muted); }
   .brand--dark .brand__tagline { color: var(--c-gold); }
 </style>

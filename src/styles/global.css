@@ -109,10 +109,9 @@ button {
   transition:
     background var(--dur-fast) var(--ease-standard),
     color var(--dur-fast) var(--ease-standard),
-    border-color var(--dur-fast) var(--ease-standard),
-    transform var(--dur-fast) var(--ease-standard);
+    border-color var(--dur-fast) var(--ease-standard);
 }
-.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn:hover { opacity: 1; }
 
 .btn--navy { background: var(--c-navy); color: var(--c-ivoire); border-color: var(--c-navy); }
 .btn--navy:hover { background: var(--c-navy-deep); border-color: var(--c-navy-deep); color: var(--c-ivoire); }
@@ -141,21 +140,4 @@ button {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--c-accent);
-}
-
-/* Révélation au scroll — uniquement si JS actif ; neutralisée par prefers-reduced-motion */
-html.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity 0.65s var(--ease-standard),
-    transform 0.65s var(--ease-standard);
-  transition-delay: var(--reveal-delay, 0s);
-}
-html.js [data-reveal].is-revealed {
-  opacity: 1;
-  transform: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  html.js [data-reveal] { opacity: 1; transform: none; }
 }

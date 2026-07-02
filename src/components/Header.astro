@@ -4,6 +4,7 @@ import Brand from './Brand.astro';
 const navItems = [
   { href: '/#associes', label: 'Les associés' },
   { href: '/#contact', label: 'Nous rencontrer' },
+  { href: 'mailto:contact@berger-associes.fr', label: 'Nous écrire' },
 ];
 ---
 
@@ -13,18 +14,13 @@ const navItems = [
       <Brand tone="light" tagline />
     </a>
 
-    <nav aria-label="Navigation principale" class="site-header__navwrap">
+    <nav aria-label="Navigation principale">
       <ul class="site-header__nav">
         {navItems.map(({ href, label }) => (
           <li>
             <a href={href} class="site-header__link">{label}</a>
           </li>
         ))}
-        <li>
-          <a href="mailto:contact@berger-associes.fr" class="btn btn--navy site-header__cta">
-            Nous écrire
-          </a>
-        </li>
       </ul>
     </nav>
   </div>
@@ -33,7 +29,7 @@ const navItems = [
 <style>
   .site-header {
     border-bottom: 1px solid var(--c-divider);
-    background: rgba(250, 246, 236, 0.88);
+    background: rgba(250, 246, 236, 0.92);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -81,8 +77,6 @@ const navItems = [
     opacity: 1;
   }
 
-  .site-header__cta { padding: 0.55em 1.3em; }
-
   @media (max-width: 720px) {
     .site-header__inner {
       flex-wrap: wrap;
@@ -91,7 +85,6 @@ const navItems = [
       padding-block: var(--s-2);
       min-height: 0;
     }
-    .site-header__nav { gap: var(--s-3); }
-    .site-header__cta { display: none; }
+    .site-header__nav { gap: var(--s-3); flex-wrap: wrap; justify-content: center; }
   }
 </style>
