@@ -1,43 +1,37 @@
-# Astro Starter Kit: Minimal
+# berger-associes.fr
 
-```sh
-npm create astro@latest -- --template minimal
+Site vitrine du cabinet **Berger & Associés** — conseil en gestion de patrimoine, Paris.
+
+- **Stack** : Astro 6 · vanilla CSS (design tokens) · Playwright + axe-core
+- **Design** : direction « Minéral parisien », palette P2 « Ivoire & Nuit » (`src/styles/tokens.css`)
+- **Spec design** : `docs/superpowers/specs/2026-04-20-refonte-site-berger-associes-design.md`
+- **Phase actuelle** : Phase 1 — landing conforme (accueil + 3 pages légales + 404)
+
+## Structure
+
+```
+src/
+├── components/     Brand (lockup marque), Header, Footer, SEOHead, CookieBanner
+├── layouts/        BaseLayout (SEO + skip-link + reveal au scroll)
+├── pages/          index, mentions-legales, confidentialite, cookies, 404
+└── styles/         tokens.css (design tokens) + global.css (reset, utilitaires, boutons)
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commandes
 
-## 🚀 Project Structure
+| Commande | Action |
+| :-- | :-- |
+| `npm install` | Installe les dépendances |
+| `npm run dev` | Serveur de dev sur `localhost:4321` |
+| `npm run build` | Build de production vers `./dist/` |
+| `npm run preview` | Prévisualise le build |
+| `npx playwright test` | Tests : a11y WCAG 2.1 AA (axe-core) + bandeau cookies CNIL |
 
-Inside of your Astro project, you'll see the following folders and files:
+Dans un environnement avec Chromium préinstallé, pointer Playwright dessus :
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE=/chemin/vers/chromium npx playwright test`
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Conventions
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- L'or (`--c-gold`) est réservé aux accents (filets, eyebrows, liens) — jamais en aplat large.
+- Contenu et mentions réglementaires : ne rien modifier sans validation (ORIAS, ACPR, AMF, CNCGP).
+- Animations discrètes uniquement, `prefers-reduced-motion` respecté, contenu visible sans JavaScript.
