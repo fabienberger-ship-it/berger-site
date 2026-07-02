@@ -6,6 +6,10 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:4321',
     trace: 'on-first-retry',
+    // Permet d'utiliser un Chromium système (CI/sandbox) sans re-télécharger les navigateurs
+    launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE
+      ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }
+      : {},
   },
   webServer: {
     command: 'npm run dev',

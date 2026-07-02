@@ -40,6 +40,9 @@ const ogImage = `${siteUrl}/og-default.png`;
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<meta name="theme-color" content="#14233A" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" href="/favicon.png" />
@@ -53,7 +56,11 @@ const ogImage = `${siteUrl}/og-default.png`;
   "description": description,
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "96 boulevard Sébastopol",
+    "postalCode": "75003",
     "addressLocality": "Paris",
     "addressCountry": "FR"
-  }
+  },
+  "email": "contact@berger-associes.fr",
+  "foundingDate": "2013"
 })} />

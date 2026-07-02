@@ -1,11 +1,14 @@
 ---
+import Brand from './Brand.astro';
+
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+  <div class="site-footer__filet" aria-hidden="true"></div>
   <div class="container-wide site-footer__inner">
     <div class="site-footer__brand">
-      <img src="/logos/logo-horizontal-navy.png" alt="Berger & Associés" width="240" height="60" />
+      <Brand tone="dark" />
       <p class="site-footer__tagline">Conseil en gestion de patrimoine · Paris</p>
     </div>
 
@@ -54,9 +57,14 @@ const year = new Date().getFullYear();
 
 <style>
   .site-footer {
-    background: var(--c-navy);
+    background: linear-gradient(180deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
     color: var(--c-ivoire);
-    margin-top: var(--s-7);
+  }
+
+  .site-footer__filet {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c-gold) 18%, var(--c-gold) 82%, transparent);
+    opacity: 0.75;
   }
 
   .site-footer__inner {
@@ -65,8 +73,6 @@ const year = new Date().getFullYear();
     gap: var(--s-5);
     padding-block: var(--s-6) var(--s-5);
   }
-
-  .site-footer__brand img { filter: none; max-height: 52px; width: auto; }
 
   .site-footer__tagline {
     font-size: var(--fs-xs);

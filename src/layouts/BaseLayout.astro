@@ -28,5 +28,31 @@ const { title, description, canonicalPath, noindex } = Astro.props;
     </main>
     <Footer />
     <CookieBanner />
+
+    <script>
+      // Révélation douce au scroll. La classe .js conditionne le masquage initial :
+      // sans JavaScript, tout le contenu reste visible.
+      document.documentElement.classList.add('js');
+
+      const targets = document.querySelectorAll('[data-reveal]');
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduced || !('IntersectionObserver' in window)) {
+        targets.forEach((el) => el.classList.add('is-revealed'));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+        );
+        targets.forEach((el) => observer.observe(el));
+      }
+    </script>
   </body>
 </html>

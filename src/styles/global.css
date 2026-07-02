@@ -91,3 +91,71 @@ button {
   padding: 0 !important; margin: -1px !important;
   overflow: hidden !important; clip: rect(0, 0, 0, 0) !important;
 }
+
+/* Boutons partagés */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.8em 1.75em;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+
+.btn--navy { background: var(--c-navy); color: var(--c-ivoire); border-color: var(--c-navy); }
+.btn--navy:hover { background: var(--c-navy-deep); border-color: var(--c-navy-deep); color: var(--c-ivoire); }
+
+.btn--ivoire { background: var(--c-ivoire); color: var(--c-navy); border-color: var(--c-ivoire); }
+.btn--ivoire:hover { background: var(--c-sand); border-color: var(--c-sand); color: var(--c-navy); }
+
+.btn--outline { background: transparent; color: var(--c-fg); border-color: var(--c-divider); }
+.btn--outline:hover { border-color: var(--c-fg); color: var(--c-fg); }
+
+/* Filet or — signature graphique du cabinet */
+.rule-gold {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--c-gold);
+  vertical-align: middle;
+}
+
+/* Eyebrow éditorial */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+/* Révélation au scroll — uniquement si JS actif ; neutralisée par prefers-reduced-motion */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s var(--ease-standard),
+    transform 0.65s var(--ease-standard);
+  transition-delay: var(--reveal-delay, 0s);
+}
+html.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] { opacity: 1; transform: none; }
+}

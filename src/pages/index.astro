@@ -2,9 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const associates = [
-  { name: 'Fabien Berger', role: 'Associé fondateur', mailto: 'fabien.berger@berger-associes.fr' },
-  { name: 'Sabine Tellier', role: 'Associée', mailto: 'sabine.tellier@berger-associes.fr' },
-  { name: 'Marine Gorin', role: 'Associée', mailto: 'marine.gorin@berger-associes.fr' },
+  {
+    name: 'Fabien Berger',
+    role: 'Associé fondateur',
+    mailto: 'fabien.berger@berger-associes.fr',
+    initials: 'FB',
+  },
+  {
+    name: 'Sabine Tellier',
+    role: 'Associée',
+    mailto: 'sabine.tellier@berger-associes.fr',
+    initials: 'ST',
+  },
+  {
+    name: 'Marine Gorin',
+    role: 'Associée',
+    mailto: 'marine.gorin@berger-associes.fr',
+    initials: 'MG',
+  },
 ];
 ---
 
@@ -13,31 +28,56 @@ const associates = [
   description="Cabinet indépendant de conseil en gestion de patrimoine, Paris. Trois associés, une relation long terme. Depuis 2013."
 >
   <section class="hero">
-    <div class="container">
-      <p class="hero__eyebrow">Cabinet de conseil en gestion de patrimoine · Paris · Depuis 2013</p>
+    <div class="hero__watermark" aria-hidden="true">b&amp;a</div>
+    <div class="container hero__content">
+      <p class="eyebrow hero__eyebrow" data-reveal>
+        <span class="rule-gold" aria-hidden="true"></span>
+        Cabinet de conseil en gestion de patrimoine · Paris
+      </p>
 
-      <h1 class="hero__title editorial">
+      <h1 class="hero__title editorial" data-reveal style="--reveal-delay: 0.08s">
         Trois associés à Paris,<br>un cabinet en partage.
       </h1>
 
-      <p class="hero__lead">
+      <p class="hero__lead" data-reveal style="--reveal-delay: 0.16s">
         Fabien Berger, Sabine Tellier, Marine Gorin. Nos clients nous arrivent par recommandation
         depuis 2013. Ils nous rencontrent en personne, et ils restent.
       </p>
 
-      <div class="hero__actions">
-        <a href="mailto:contact@berger-associes.fr" class="btn btn--primary">Nous contacter</a>
+      <div class="hero__actions" data-reveal style="--reveal-delay: 0.24s">
+        <a href="mailto:contact@berger-associes.fr" class="btn btn--ivoire">Nous contacter</a>
+        <a href="#associes" class="hero__link">Rencontrer les associés</a>
+      </div>
+    </div>
+
+    <div class="hero__trust">
+      <div class="container">
+        <ul class="hero__trust-list">
+          <li>Depuis 2013</li>
+          <li>ORIAS n° 13004419</li>
+          <li>Membre CNCGP</li>
+          <li>Sous contrôle ACPR / AMF</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="associates">
+  <section class="associates" id="associes">
     <div class="container">
-      <h2 class="section-h">Les associés</h2>
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">
+          <span class="rule-gold" aria-hidden="true"></span>
+          Le cabinet
+        </p>
+        <h2 class="section-head__title editorial">Les associés</h2>
+      </header>
+
       <ul class="associates__grid">
-        {associates.map(({ name, role, mailto }) => (
-          <li class="associate">
-            <div class="associate__portrait" aria-hidden="true"></div>
+        {associates.map(({ name, role, mailto, initials }, i) => (
+          <li class="associate" data-reveal style={`--reveal-delay: ${i * 0.09}s`}>
+            <div class="associate__portrait" aria-hidden="true">
+              <span class="associate__initials editorial">{initials}</span>
+            </div>
             <h3 class="associate__name editorial">{name}</h3>
             <p class="associate__role">{role}</p>
             <p class="associate__email">
@@ -46,7 +86,8 @@ const associates = [
           </li>
         ))}
       </ul>
-      <p class="associates__note">
+
+      <p class="associates__note" data-reveal>
         La version complète du site, avec les biographies, méthodes et journal des associés,
         sera mise en ligne prochainement. Pour un rendez-vous ou une demande d'information,
         contactez-nous par email ou directement un associé.
@@ -54,75 +95,141 @@ const associates = [
     </div>
   </section>
 
-  <section class="contact">
-    <div class="container">
-      <h2 class="section-h">Nous rencontrer</h2>
-      <p>
-        Email du cabinet : <a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a><br>
-        Adresse : 96 boulevard Sébastopol, 75003 Paris.
-      </p>
-      <p class="note">
-        Premier rendez-vous sans engagement, à notre cabinet ou en visioconférence. Nous
-        établissons ensemble le périmètre de votre demande avant tout engagement commercial.
-      </p>
+  <section class="contact" id="contact">
+    <div class="contact__filet" aria-hidden="true"></div>
+    <div class="container contact__inner">
+      <div class="contact__intro" data-reveal>
+        <p class="eyebrow">
+          <span class="rule-gold" aria-hidden="true"></span>
+          Contact
+        </p>
+        <h2 class="contact__title editorial">Nous rencontrer</h2>
+        <p class="contact__text">
+          Premier rendez-vous sans engagement, à notre cabinet ou en visioconférence. Nous
+          établissons ensemble le périmètre de votre demande avant tout engagement commercial.
+        </p>
+      </div>
+
+      <div class="contact__card" data-reveal style="--reveal-delay: 0.12s">
+        <dl class="contact__details">
+          <div>
+            <dt>Email du cabinet</dt>
+            <dd><a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a></dd>
+          </div>
+          <div>
+            <dt>Adresse</dt>
+            <dd>96 boulevard Sébastopol<br>75003 Paris</dd>
+          </div>
+        </dl>
+        <a href="mailto:contact@berger-associes.fr" class="btn btn--navy contact__cta">
+          Prendre rendez-vous
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  /* ————— Hero — composition navy validée (V1B) ————— */
   .hero {
-    padding-block: var(--s-7) var(--s-6);
+    position: relative;
+    background:
+      radial-gradient(120% 140% at 85% -10%, rgba(182, 145, 83, 0.12) 0%, transparent 45%),
+      linear-gradient(165deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
+    color: var(--c-ivoire);
+    overflow: hidden;
+  }
+
+  .hero__watermark {
+    position: absolute;
+    right: -0.12em;
+    bottom: -0.34em;
+    font-family: var(--ff-serif);
+    font-weight: 600;
+    font-size: clamp(16rem, 34vw, 30rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: rgba(250, 246, 236, 0.035);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .hero__content {
+    position: relative;
+    padding-block: clamp(var(--s-6), 10vh, calc(var(--s-7) + var(--s-4))) var(--s-6);
   }
 
   .hero__eyebrow {
-    font-size: var(--fs-xs);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--c-accent);
+    color: var(--c-gold);
     margin-bottom: var(--s-3);
   }
 
   .hero__title {
     font-size: clamp(var(--fs-3xl), 7vw, var(--fs-5xl));
     line-height: var(--lh-tight);
-    letter-spacing: -0.035em;
-    color: var(--c-fg);
+    letter-spacing: -0.03em;
+    color: var(--c-ivoire);
     margin-bottom: var(--s-3);
     font-weight: 600;
+    text-wrap: balance;
   }
 
   .hero__lead {
     font-size: clamp(var(--fs-lg), 2.2vw, var(--fs-xl));
     line-height: var(--lh-normal);
-    color: var(--c-fg-muted);
+    color: var(--c-ivoire-veil);
     max-width: 620px;
     margin-bottom: var(--s-5);
   }
 
-  .btn {
-    display: inline-block;
-    padding: var(--s-1) var(--s-3);
+  .hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+  }
+
+  .hero__link {
+    color: var(--c-gold);
     font-size: var(--fs-sm);
-    font-weight: 500;
     letter-spacing: 0.04em;
-    border-radius: var(--radius-sm);
-    transition: background var(--dur-fast), color var(--dur-fast);
-    text-decoration: none;
-  }
-  .btn--primary { background: var(--c-navy); color: var(--c-ivoire); border: 1px solid var(--c-navy); }
-  .btn--primary:hover { background: var(--c-ivoire); color: var(--c-navy); opacity: 1; }
-
-  .section-h {
-    font-family: var(--ff-serif);
-    font-size: var(--fs-2xl);
-    font-weight: 500;
-    margin-bottom: var(--s-4);
-    padding-bottom: var(--s-2);
-    border-bottom: 1px solid var(--c-divider);
+    text-decoration-color: rgba(182, 145, 83, 0.4);
   }
 
+  .hero__link:hover { opacity: 1; text-decoration-color: var(--c-gold); }
+  .hero__link:focus-visible { outline-color: var(--c-gold); }
+
+  .hero__trust {
+    position: relative;
+    border-top: 1px solid rgba(250, 246, 236, 0.12);
+    padding-block: var(--s-3);
+  }
+
+  .hero__trust-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-ivoire-veil);
+  }
+
+  /* ————— Section head partagé ————— */
+  .section-head {
+    margin-bottom: var(--s-5);
+  }
+
+  .section-head__title {
+    font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
+    font-weight: 600;
+    margin-top: var(--s-2);
+  }
+
+  /* ————— Associés ————— */
   .associates {
-    padding-block: var(--s-6);
+    padding-block: var(--s-7) var(--s-6);
   }
 
   .associates__grid {
@@ -135,14 +242,36 @@ const associates = [
 
   .associate {
     text-align: center;
+    background: var(--c-white);
+    border: 1px solid var(--c-divider);
+    border-radius: var(--radius-md);
+    padding: var(--s-5) var(--s-3) var(--s-4);
+    transition:
+      transform var(--dur-normal) var(--ease-standard),
+      box-shadow var(--dur-normal) var(--ease-standard);
+  }
+
+  .associate:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
   }
 
   .associate__portrait {
-    width: 140px;
+    width: 116px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--c-sand) 0%, var(--c-slate) 100%);
+    background: linear-gradient(160deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
+    box-shadow: inset 0 0 0 2px var(--c-gold), inset 0 0 0 5px var(--c-navy);
     margin: 0 auto var(--s-3);
+    display: grid;
+    place-items: center;
+  }
+
+  .associate__initials {
+    color: var(--c-ivoire);
+    font-size: var(--fs-2xl);
+    font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   .associate__name {
@@ -165,8 +294,9 @@ const associates = [
 
   .associate__email a {
     color: var(--c-fg);
-    opacity: 0.75;
+    opacity: 0.7;
     text-decoration: none;
+    transition: opacity var(--dur-fast) var(--ease-standard);
   }
   .associate__email a:hover { opacity: 1; }
 
@@ -179,16 +309,82 @@ const associates = [
     margin: var(--s-4) auto 0;
   }
 
+  /* ————— Contact ————— */
   .contact {
-    padding-block: var(--s-5) var(--s-7);
     background: var(--c-sand);
-    margin-top: var(--s-5);
   }
 
-  .contact p { color: var(--c-fg); font-size: var(--fs-base); line-height: var(--lh-loose); }
-  .contact .note { font-size: var(--fs-sm); color: var(--c-fg); opacity: 0.8; margin-top: var(--s-2); }
+  .contact__filet {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--c-gold) 18%, var(--c-gold) 82%, transparent);
+    opacity: 0.55;
+  }
+
+  .contact__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--s-6);
+    align-items: center;
+    padding-block: var(--s-6) var(--s-7);
+  }
+
+  .contact__title {
+    font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
+    font-weight: 600;
+    margin-block: var(--s-2) var(--s-3);
+  }
+
+  .contact__text {
+    color: var(--c-fg);
+    opacity: 0.85;
+    font-size: var(--fs-base);
+    line-height: var(--lh-loose);
+    max-width: 480px;
+  }
+
+  .contact__card {
+    background: var(--c-ivoire);
+    border: 1px solid rgba(20, 35, 58, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--s-4);
+  }
+
+  .contact__details {
+    display: grid;
+    gap: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+
+  .contact__details dt {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .contact__details dd {
+    font-size: var(--fs-base);
+    line-height: var(--lh-normal);
+    color: var(--c-fg);
+  }
+
+  .contact__details dd a {
+    color: var(--c-fg);
+    text-decoration-color: rgba(20, 35, 58, 0.3);
+  }
+
+  .contact__cta { width: 100%; }
+
+  /* ————— Responsive ————— */
+  @media (max-width: 900px) {
+    .contact__inner { grid-template-columns: 1fr; gap: var(--s-4); }
+    .contact__card { max-width: 480px; }
+  }
 
   @media (max-width: 720px) {
-    .associates__grid { grid-template-columns: 1fr; gap: var(--s-5); }
+    .associates__grid { grid-template-columns: 1fr; gap: var(--s-3); max-width: 420px; margin-inline: auto; }
+    .hero__watermark { font-size: 18rem; right: -0.2em; }
   }
 </style>
