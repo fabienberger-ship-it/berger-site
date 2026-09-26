@@ -50,18 +50,19 @@ const year = new Date().getFullYear();
 
   <div class="site-footer__bar">
     <div class="container-wide">
-      <p>© {year} Berger &amp; Associés. Tous droits réservés.</p>
+      <p>© {year} Berger &amp; Associés. Tous droits réservés. <span class="photo-credit">Photographies : Lucas Marrella.</span></p>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: linear-gradient(180deg, var(--c-navy) 0%, var(--c-navy-deep) 100%);
+    background: var(--c-navy);
     color: var(--c-ivoire);
   }
 
   .site-footer__filet {
+    display: none;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--c-gold) 18%, var(--c-gold) 82%, transparent);
     opacity: 0.75;
@@ -91,7 +92,7 @@ const year = new Date().getFullYear();
     font-weight: 500;
   }
 
-  .site-footer__list { list-style: none; font-size: var(--fs-sm); line-height: var(--lh-loose); }
+  .site-footer__list { list-style: none; font-size: var(--fs-sm); line-height: var(--lh-loose); overflow-wrap: anywhere; }
 
   .site-footer__list a {
     color: var(--c-ivoire);
@@ -104,14 +105,14 @@ const year = new Date().getFullYear();
   .site-footer__regulatory {
     border-top: 1px solid rgba(250, 246, 236, 0.1);
     padding-block: var(--s-3);
-    font-size: 0.7rem;
-    line-height: 1.55;
-    color: rgba(250, 246, 236, 0.55);
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: #BBC7D0;
   }
 
   .site-footer__regulatory p {
     max-width: 100%;
-    text-align: justify;
+    text-align: left;
     text-wrap: pretty;
   }
 
@@ -125,13 +126,15 @@ const year = new Date().getFullYear();
     border-top: 1px solid rgba(250, 246, 236, 0.1);
     padding-block: var(--s-3);
     font-size: var(--fs-xs);
-    color: rgba(250, 246, 236, 0.6);
+    color: #BBC7D0;
   }
 
-  @media (max-width: 900px) {
+  .photo-credit { display: inline-block; margin-left: 1rem; }
+  @media (max-width: 1100px) {
     .site-footer__inner { grid-template-columns: 1fr 1fr; gap: var(--s-4); }
   }
-  @media (max-width: 540px) {
+  @media (max-width: 620px) {
     .site-footer__inner { grid-template-columns: 1fr; }
+    .photo-credit { display: block; margin: .5rem 0 0; }
   }
 </style>
