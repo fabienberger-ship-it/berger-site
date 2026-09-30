@@ -31,7 +31,7 @@ test('sur mobile, le menu permet de rejoindre les associés et se referme', asyn
   await page.getByRole('navigation', { name: 'Navigation principale mobile' }).getByRole('link', { name: 'Les associés' }).click();
   await expect(page).toHaveURL(/#associes$/);
   await expect(page.locator('.mobile-nav')).not.toHaveAttribute('open', '');
-  await expect(page.getByRole('link', { name: 'Écrire à Marine Gorin' })).toHaveAttribute('href', 'mailto:marine.gorin@berger-associes.fr');
+  await expect(page.locator('#associes').getByRole('link', { name: 'Écrire à Marine Gorin' })).toHaveAttribute('href', 'mailto:marine.gorin@berger-associes.fr');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 

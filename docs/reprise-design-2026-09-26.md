@@ -54,3 +54,21 @@ Compilation des cinq pages réussie. Neuf contrôles automatisés réussis : acc
 Les prévisualisations Cloudflare sont marquées `noindex, nofollow` lorsque la branche de construction diffère de `main`. Les liens sociaux utilisent alors l'adresse du déploiement. Ces réglages ne protègent pas l'aperçu par mot de passe : il reste consultable par toute personne connaissant son adresse.
 
 L'aperçu est destiné à recueillir le retour du cabinet avant la mise en ligne sur son domaine. Aucun abonnement, DNS ou état de publication Wix n'a été modifié.
+
+## Retours de Marine intégrés le 30 septembre
+
+Les couleurs et la sobriété sont conservées. L'accueil porte désormais « Une relation de confiance, un patrimoine qui dure » ; la section cabinet utilise « Construire ensemble, sur le long terme ». Les autres accroches proposées sont des alternatives, pas des slogans à cumuler.
+
+La section associés devient « Faisons connaissance » et précise que ceux qui dirigent le cabinet sont ceux qui conseillent les clients. La présentation de Marine Gorin (Guillo) reprend le parcours, le diplôme, les certifications et les expertises qu'elle a elle-même fournis, avec une légère mise en forme en trois paragraphes. Ces éléments sont déclaratifs et n'ont pas été vérifiés auprès des organismes cités.
+
+Pour Fabien, le texte court repose sur la création du cabinet en 2013 et la constitution d'une équipe aux profils complémentaires, attestées par l'accueil Wix sauvegardé. Pour Sabine, l'association depuis 2016 est attestée par la légende du portrait Wix ; la direction et l'accompagnement personnel reprennent le DER et le positionnement communiqué par Marine. Leurs diplômes, parcours antérieurs et expertises individuelles ne sont pas inventés. Leurs compléments biographiques ont été demandés à Fabien et restent attendus.
+
+La méthode précise le rôle de généralistes et le travail en interprofessionnalité avec des notaires, avocats et experts-comptables, qu'il s'agisse des conseils habituels du client ou d'autres experts. Le texte sur la transmission est aligné sur cette ouverture.
+
+La section contact est intitulée « Tout commence par un premier échange ». Les trois emails personnels remplacent l'adresse générique. Le pied de page, la page 404 et les données structurées utilisent également les contacts des associés ; aucune boîte mail n'est supprimée chez le fournisseur de messagerie.
+
+La vignette de partage `public/og.png` a été actualisée par une seule édition Imagegen intégrée : [prompt exact](imagegen-social-2026-09-30.txt). La nouvelle accroche et les autres mentions de l'image ont été relues. Les photos existantes sont conservées dans l'attente du choix des trois associés et du portrait de Marine.
+
+Les coordonnées et présentations sont réunies dans `src/data/associates.ts` pour éviter des écarts entre les différentes sections. L'aperçu de branche reste le lien à utiliser pour suivre les modifications ; les anciens liens de déploiement conservent leur version historique.
+
+Vérification du 30 septembre : compilation réussie, neuf tests existants réussis, aucune adresse générique ni ancienne accroche restante dans les sources. La relecture sémantique a également permis d'inclure l'adresse email visible dans le nom accessible de chaque lien des biographies.

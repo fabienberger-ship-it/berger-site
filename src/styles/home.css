@@ -1,7 +1,7 @@
 .hero { padding-top: clamp(3rem, 5.5vw, 5.5rem); }
 .hero__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .hero__copy { padding-block: 1.5rem; }
-.hero__title { font-family: var(--ff-serif); font-size: clamp(4.5rem, 7.2vw, 7.7rem); line-height: .97; font-weight: 400; letter-spacing: -.052em; margin: 2rem 0 1.7rem; }
+.hero__title { font-family: var(--ff-serif); font-size: clamp(3.2rem, 5.2vw, 5.5rem); line-height: 1.02; font-weight: 400; letter-spacing: -.04em; margin: 2rem 0 1.7rem; text-wrap: balance; }
 .hero__title em { font-style: normal; color: #896D49; }
 .hero__lead { font-size: 1rem; line-height: 1.85; color: var(--c-fg-muted); max-width: 410px; margin-bottom: 2rem; }
 .hero__signature { color: var(--c-fg-muted); font-size: .73rem; margin-top: 1.5rem; }
@@ -43,22 +43,23 @@
 .approach__step-label::before { content: '0' counter(steps) ' / '; margin-right: .5rem; }
 .approach__steps h3 { font-family: var(--ff-serif); font-weight: 400; font-size: 2.3rem; line-height: 1.12; letter-spacing: -.025em; margin-bottom: 1rem; }
 .approach__steps p { font-size: .88rem; color: var(--c-fg-muted); line-height: 1.85; max-width: 330px; }
-.approach__note { margin-top: 3rem; border-top: 1px solid #CCC6BC; padding-top: 1.2rem; color: var(--c-fg-muted); font-size: .76rem; }
+.approach__note { margin-top: 3rem; border-top: 1px solid #CCC6BC; padding-top: 1.2rem; color: var(--c-fg-muted); font-size: .9rem; line-height: 1.85; max-width: 860px; }
 
-.associates__inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); }
+.associates__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
 .associates__intro .section-title { margin-top: 1.5rem; }
 .associates__intro > p:not(.eyebrow) { font-size: .93rem; line-height: 1.85; color: var(--c-fg-muted); max-width: 325px; margin-top: 1.5rem; }
 .associates__location { display: block; font-size: .72rem; margin-top: 3rem; color: var(--c-fg-muted); }
 .associates__location sup { font-size: .65em; }
 .associates__list { list-style: none; }
-.associates__list li { border-top: 1px solid var(--c-divider); }
+.associates__list li { border-top: 1px solid var(--c-divider); padding-block: 1.8rem 2rem; }
 .associates__list li:last-child { border-bottom: 1px solid var(--c-divider); }
-.associates__list a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--c-navy); text-decoration: none; padding: 1.65rem .2rem; transition: color var(--dur-fast); }
+.associates__list a { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 1rem; color: var(--c-navy); text-decoration: none; padding-block: .5rem; transition: color var(--dur-fast); }
 .associates__list a:hover { color: var(--c-accent); opacity: 1; }
-.associates__identity { display: flex; flex-direction: column; align-items: flex-start; }
-.associates__role { font-size: .62rem; text-transform: uppercase; letter-spacing: .13em; color: var(--c-fg-muted); }
-.associates__name { font-family: var(--ff-serif); font-size: clamp(2.05rem, 3vw, 2.8rem); letter-spacing: -.025em; line-height: 1.3; margin-block: .3rem; }
-.associates__email { font-size: .72rem; color: var(--c-fg-muted); overflow-wrap: anywhere; }
+.associates__role { font-size: .78rem; line-height: 1.6; color: var(--c-fg-muted); }
+.associates__name { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(2.05rem, 3vw, 2.8rem); letter-spacing: -.025em; line-height: 1.2; margin-bottom: .55rem; }
+.associates__biography { margin-block: 1.2rem .8rem; color: var(--c-fg-muted); font-size: .9rem; line-height: 1.85; }
+.associates__biography p + p { margin-top: .85rem; }
+.associates__email { font-size: .76rem; overflow-wrap: anywhere; }
 .associates__arrow { font-size: 1.55rem; }
 
 .contact { padding-block: clamp(4rem, 7vw, 6.5rem); background: #E8E4DB; }
@@ -69,7 +70,12 @@
 .contact__address-label { font-size: .67rem; text-transform: uppercase; letter-spacing: .12em; color: var(--c-fg-muted); }
 .contact__address address { display: flex; flex-direction: column; font-style: normal; gap: .75rem; padding-block: 1.3rem 1.7rem; font-size: 1.1rem; line-height: 1.6; }
 .contact__street-number { font-family: var(--ff-serif); font-size: 6rem; line-height: .9; }
-.contact__email { display: block; width: fit-content; margin-top: 2.5rem; font-size: .82rem; color: var(--c-fg); overflow-wrap: anywhere; text-decoration-color: #A0A09A; }
+.contact__people { list-style: none; max-width: 430px; }
+.contact__people li { border-top: 1px solid #BDB7AC; }
+.contact__people li:last-child { border-bottom: 1px solid #BDB7AC; }
+.contact__people a { display: flex; flex-direction: column; gap: .25rem; padding-block: .85rem; color: var(--c-fg); text-decoration: none; }
+.contact__people a span:first-child { font-size: .94rem; font-weight: 500; }
+.contact__people a span:last-child { font-size: .8rem; overflow-wrap: anywhere; }
 
 @media (max-width: 1000px) {
   .hero__grid { gap: 2rem; }
@@ -82,7 +88,7 @@
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero__copy { padding-block: 0; }
-  .hero__title { font-size: clamp(4.6rem, 12vw, 7rem); }
+  .hero__title { font-size: clamp(3.2rem, 7.8vw, 5.5rem); max-width: 720px; }
   .hero__lead { max-width: 510px; }
   .hero__portraits { width: 100%; max-width: 660px; justify-self: end; }
   .hero__portrait img { height: clamp(310px, 60vw, 485px); }
@@ -96,11 +102,10 @@
   .contact__address { border-left: 0; border-top: 1px solid #BDB7AC; padding: 2.5rem 0 0; margin-top: 1rem; }
   .contact__address address { flex-direction: row; align-items: center; gap: 1.5rem; }
   .contact__street-number { font-size: 5rem; }
-  .contact__email { margin-top: 1.5rem; }
 }
 @media (max-width: 620px) {
   .hero { padding-top: 2.4rem; }
-  .hero__title { margin-top: 1.5rem; }
+  .hero__title { margin-top: 1.5rem; font-size: clamp(2.6rem, 9.5vw, 3.65rem); }
   .hero__portraits { gap: .8rem; }
   .hero__portrait img { height: 70vw; max-height: 370px; }
   .hero__portrait figcaption { font-size: .75rem; padding-top: .7rem; }
@@ -117,6 +122,4 @@
   .approach__steps { gap: 2rem; }
   .approach__step-label { margin-bottom: 1rem; }
   .approach__steps p { max-width: 100%; }
-  .associates__list a { padding-block: 1.45rem; }
-  .associates__email { font-size: .66rem; }
 }

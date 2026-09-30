@@ -1,5 +1,6 @@
 ---
 import Brand from './Brand.astro';
+import { associates } from '../data/associates';
 
 const year = new Date().getFullYear();
 ---
@@ -15,7 +16,7 @@ const year = new Date().getFullYear();
     <div class="site-footer__col">
       <h2 class="site-footer__h">Contact</h2>
       <ul class="site-footer__list">
-        <li><a href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a></li>
+        {associates.map(({ contactName, email }) => <li><a href={'mailto:' + email} aria-label={'Écrire à ' + contactName}>{contactName}</a></li>)}
         <li>96 boulevard Sébastopol</li>
         <li>75003 Paris</li>
       </ul>

@@ -4,25 +4,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import fabienPortrait from '../assets/fabien-berger.webp';
 import sabinePortrait from '../assets/sabine-tellier.webp';
-
-const associates = [
-  { name: 'Fabien Berger', role: 'Associé fondateur', mailto: 'fabien.berger@berger-associes.fr' },
-  { name: 'Sabine Tellier', role: 'Associée', mailto: 'sabine.tellier@berger-associes.fr' },
-  { name: 'Marine Gorin', role: 'Associée', mailto: 'marine.gorin@berger-associes.fr' },
-];
+import { associates } from '../data/associates';
 ---
 
 <BaseLayout
   title="Berger & Associés — Conseil en gestion de patrimoine, Paris"
-  description="Berger & Associés, cabinet indépendant de conseil en gestion de patrimoine à Paris. Trois associés. Fondé en 2013."
+  description="Une relation de confiance, un patrimoine qui dure. À Paris, trois associés personnellement engagés à vos côtés pour construire votre stratégie patrimoniale."
 >
   <section class="hero" aria-labelledby="hero-title">
     <div class="container-wide hero__grid">
       <div class="hero__copy">
         <p class="eyebrow">Conseil en gestion de patrimoine · Paris</p>
-        <h1 id="hero-title" class="hero__title editorial">L’humain,<br><em>avant tout.</em></h1>
+        <h1 id="hero-title" class="hero__title editorial">Une relation de confiance,<br><em>un patrimoine qui dure.</em></h1>
         <p class="hero__lead">Un patrimoine se construit autour d’une vie. Depuis 2013, nous accompagnons les particuliers, les familles et les dirigeants dans leurs décisions patrimoniales.</p>
-        <a href="#contact" class="button-link">Rencontrons-nous <span aria-hidden="true">↗</span></a>
+        <a href="#contact" class="button-link">Un premier échange <span aria-hidden="true">↗</span></a>
         <p class="hero__signature">Un cabinet indépendant. Une relation directe.</p>
       </div>
       <div class="hero__portraits" aria-label="Portraits de Fabien Berger et Sabine Tellier">
@@ -44,7 +39,7 @@ const associates = [
     <div class="container-wide cabinet__inner">
       <div>
         <p class="eyebrow eyebrow--light">Le cabinet</p>
-        <h2 id="cabinet-title" class="section-title">Prendre le temps<br>de vous connaître.</h2>
+        <h2 id="cabinet-title" class="section-title">Construire ensemble,<br>sur le long terme.</h2>
       </div>
       <div class="cabinet__text">
         <p class="cabinet__lead">Avant les chiffres, il y a vos projets, vos proches et vos choix de vie.</p>
@@ -84,7 +79,7 @@ const associates = [
         </article>
         <article class="expertise__item">
           <span class="section-number" aria-hidden="true">04</span>
-          <div><h3>Organiser la transmission</h3><p>Réfléchir à ce que vous souhaitez transmettre, à qui et dans quelles conditions, en lien avec vos conseils habituels.</p></div>
+          <div><h3>Organiser la transmission</h3><p>Réfléchir à ce que vous souhaitez transmettre, à qui et dans quelles conditions, avec l’appui de professionnels du droit et du chiffre lorsque cela est nécessaire.</p></div>
         </article>
       </div>
     </div>
@@ -116,7 +111,7 @@ const associates = [
           <p>Nous accompagnons la mise en œuvre des décisions retenues et réexaminons avec vous votre situation lorsqu’elle évolue.</p>
         </li>
       </ol>
-      <p class="approach__note">Lorsque votre situation le demande, nous travaillons avec vos notaires, avocats et experts-comptables.</p>
+      <p class="approach__note">Nous sommes des généralistes de la gestion de patrimoine. Lorsque votre situation le demande, nous travaillons en interprofessionnalité avec des notaires, des avocats et des experts-comptables : vos conseils habituels ou des experts dont nous nous entourons selon vos besoins.</p>
     </div>
   </section>
 
@@ -124,21 +119,21 @@ const associates = [
     <div class="container-wide associates__inner">
       <div class="associates__intro">
         <p class="eyebrow">Les associés</p>
-        <h2 id="associates-title" class="section-title">Des personnes<br>à qui parler.</h2>
-        <p>Fabien, Sabine et Marine sont vos interlocuteurs au cabinet. Vous pouvez leur écrire directement pour faire connaissance ou poursuivre un échange.</p>
+        <h2 id="associates-title" class="section-title">Faisons<br>connaissance.</h2>
+        <p>Ceux qui dirigent le cabinet sont ceux qui vous conseillent. Trois associés engagés personnellement à vos côtés.</p>
         <span class="associates__location">Paris, 3<sup>e</sup> arrondissement</span>
       </div>
       <ul class="associates__list">
-        {associates.map(({ name, role, mailto }) => (
+        {associates.map(({ id, name, contactName, role, email, biography }) => (
           <li>
-            <a href={'mailto:' + mailto} aria-label={'Écrire à ' + name}>
-              <span class="associates__identity">
-                <span class="associates__role">{role}</span>
-                <span class="associates__name">{name}</span>
-                <span class="associates__email">{mailto}</span>
-              </span>
-              <span class="associates__arrow" aria-hidden="true">↗</span>
-            </a>
+            <article aria-labelledby={id}>
+              <h3 class="associates__name" id={id}>{name}</h3>
+              <p class="associates__role">{role}</p>
+              <div class="associates__biography">{biography.map(paragraph => <p>{paragraph}</p>)}</div>
+              <a class="associates__email" href={'mailto:' + email} aria-label={'Écrire à ' + contactName + ' : ' + email}>
+                <span>{email}</span><span class="associates__arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
           </li>
         ))}
       </ul>
@@ -148,16 +143,19 @@ const associates = [
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="container-wide contact__inner">
       <div class="contact__copy">
-        <p class="eyebrow">Faisons connaissance</p>
-        <h2 id="contact-title" class="section-title">Tout commence<br>par une conversation.</h2>
+        <p class="eyebrow">Nous contacter</p>
+        <h2 id="contact-title" class="section-title">Tout commence<br>par un premier échange.</h2>
         <p>Au cabinet ou en visioconférence, un premier rendez-vous permet de faire le point sur votre demande, sans engagement.</p>
-        <a href="mailto:contact@berger-associes.fr" class="button-link">Nous écrire <span aria-hidden="true">↗</span></a>
+        <ul class="contact__people" aria-label="Contacter un associé">
+          {associates.map(({ contactName, email }) => (
+            <li><a href={'mailto:' + email}><span>{contactName}</span><span>{email}</span></a></li>
+          ))}
+        </ul>
       </div>
       <div class="contact__address">
         <p class="contact__address-label">Nous rencontrer à Paris</p>
         <address><span class="contact__street-number">96</span><span>boulevard Sébastopol<br>75003 Paris</span></address>
         <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=96+boulevard+Sebastopol+75003+Paris" target="_blank" rel="noopener noreferrer" aria-label="Voir l’itinéraire sur Google Maps, nouvel onglet">Voir l’itinéraire <span aria-hidden="true">↗</span></a>
-        <a class="contact__email" href="mailto:contact@berger-associes.fr">contact@berger-associes.fr</a>
       </div>
     </div>
   </section>
