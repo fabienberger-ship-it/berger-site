@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
   use: {
-    baseURL: 'http://localhost:4321',
+    baseURL: 'http://127.0.0.1:4392',
     trace: 'on-first-retry',
     // Permet d'utiliser un Chromium système (CI/sandbox) sans re-télécharger les navigateurs
     launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE
@@ -12,8 +12,8 @@ export default defineConfig({
       : {},
   },
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:4321',
+    command: 'npm run preview -- --host 127.0.0.1 --port 4392',
+    url: 'http://127.0.0.1:4392',
     timeout: 60_000,
     reuseExistingServer: !process.env.CI,
   },

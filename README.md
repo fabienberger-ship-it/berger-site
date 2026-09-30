@@ -1,37 +1,26 @@
-# berger-associes.fr
+# Berger & Associés
 
-Site vitrine du cabinet **Berger & Associés** — conseil en gestion de patrimoine, Paris.
+Site du cabinet de conseil en gestion de patrimoine à Paris. Astro 6, CSS, hébergement existant Cloudflare Pages.
 
-- **Stack** : Astro 6 · vanilla CSS (design tokens) · Playwright + axe-core
-- **Design** : direction « Minéral parisien », palette P2 « Ivoire & Nuit » (`src/styles/tokens.css`)
-- **Spec design** : `docs/superpowers/specs/2026-04-20-refonte-site-berger-associes-design.md`
-- **Phase actuelle** : Phase 1 — landing conforme (accueil + 3 pages légales + 404)
+La proposition de septembre 2026 réintroduit le logo original et les portraits du cabinet, avec une navigation adaptée au mobile. [Direction, sources et vérifications](docs/reprise-design-2026-09-26.md).
 
-## Structure
+## Développement
 
-```
-src/
-├── components/     Brand (lockup marque), Header, Footer, SEOHead, CookieBanner
-├── layouts/        BaseLayout (SEO + skip-link + reveal au scroll)
-├── pages/          index, mentions-legales, confidentialite, cookies, 404
-└── styles/         tokens.css (design tokens) + global.css (reset, utilitaires, boutons)
-```
+- `npm ci` : installation.
+- `npm run dev` : aperçu local.
+- `npm run build` : compilation statique dans `dist/`.
+- `npx playwright test` : neuf contrôles sur le résultat compilé, servi sur le port 4392.
 
-## Commandes
+La variable `PLAYWRIGHT_CHROMIUM_EXECUTABLE` permet d'utiliser un navigateur Chromium déjà installé.
 
-| Commande | Action |
-| :-- | :-- |
-| `npm install` | Installe les dépendances |
-| `npm run dev` | Serveur de dev sur `localhost:4321` |
-| `npm run build` | Build de production vers `./dist/` |
-| `npm run preview` | Prévisualise le build |
-| `npx playwright test` | Tests : a11y WCAG 2.1 AA (axe-core) + bandeau cookies CNIL |
+## Publication
 
-Dans un environnement avec Chromium préinstallé, pointer Playwright dessus :
-`PLAYWRIGHT_CHROMIUM_EXECUTABLE=/chemin/vers/chromium npx playwright test`
+La branche `main` alimente la production. Les autres branches créent des prévisualisations Cloudflare, exclues de l'indexation par une balise robots. Elles sont publiques.
 
-## Conventions
+Le domaine commercial n'est pas encore raccordé au projet. La proposition doit être revue avec le cabinet, son portrait de Marine complété et les pièces réglementaires actuelles rapprochées des textes avant cette bascule.
 
-- L'or (`--c-gold`) est réservé aux accents (filets, eyebrows, liens) — jamais en aplat large.
-- Contenu et mentions réglementaires : ne rien modifier sans validation (ORIAS, ACPR, AMF, CNCGP).
-- Animations discrètes uniquement, `prefers-reduced-motion` respecté, contenu visible sans JavaScript.
+## Ressources
+
+Les portraits, images et polices sont hébergés avec le site. Aucun outil publicitaire ni de mesure d'audience n'est chargé par les pages. Les liens email ouvrent la messagerie du visiteur ; le plan est un lien externe.
+
+Les documents de reconstitution et les sauvegardes des comptes restent dans l'espace de travail principal. Les archives privées ne doivent jamais être publiées.

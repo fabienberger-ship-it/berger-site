@@ -1,6 +1,5 @@
 ---
-// Wordmark typographique seul — pas de monogramme tant que le SVG définitif
-// du graphiste n'est pas livré. Net à toute résolution, aucun artifice.
+// Logo d'origine récupéré sur le site du cabinet ; texte clair en pied de page.
 interface Props {
   tone?: 'light' | 'dark'; // light = sur fond ivoire, dark = sur fond navy
   tagline?: boolean;
@@ -10,7 +9,7 @@ const { tone = 'light', tagline = false } = Astro.props;
 ---
 
 <span class:list={['brand', `brand--${tone}`]}>
-  <span class="brand__word">Berger <span class="brand__amp">&amp;</span> Associés</span>
+  {tone === 'light' ? <img class="brand__original" src="/logos/berger-associes-original.png" width="696" height="128" alt="Berger & Associés" /> : <span class="brand__word">Berger <span class="brand__amp">&amp;</span> Associés</span>}
   {tagline && <span class="brand__tagline">Conseil en gestion de patrimoine</span>}
 </span>
 
@@ -21,10 +20,12 @@ const { tone = 'light', tagline = false } = Astro.props;
     gap: 0.3rem;
   }
 
+  .brand__original { width: 222px; height: auto; }
+
   .brand__word {
     font-family: var(--ff-serif);
-    font-weight: 600;
-    font-size: 1.25rem;
+    font-weight: 400;
+    font-size: 1.5rem;
     letter-spacing: 0.015em;
     line-height: 1;
     white-space: nowrap;
@@ -37,12 +38,13 @@ const { tone = 'light', tagline = false } = Astro.props;
 
   .brand__tagline {
     font-family: var(--ff-sans);
-    font-size: 0.575rem;
-    letter-spacing: 0.24em;
+    font-size: 0.57rem;
+    letter-spacing: 0.19em;
     text-transform: uppercase;
     white-space: nowrap;
   }
 
   .brand--light .brand__tagline { color: var(--c-fg-muted); }
   .brand--dark .brand__tagline { color: var(--c-gold); }
+  @media (max-width: 480px) { .brand__original { width: 184px; } .brand__tagline { font-size: 0.49rem; } }
 </style>

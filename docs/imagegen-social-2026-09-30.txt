@@ -1,0 +1,11 @@
+Use case: text-localization.
+Asset type: social sharing card for Berger & Associés.
+Input image 1 is the exact edit target. Edit only the central headline of this existing landscape card.
+Replace “L’humain, avant tout.” with exactly: “Une relation de confiance, un patrimoine qui dure”
+Line breaks are free so that the entire new headline remains comfortably readable with generous margins. Preserve the refined serif headline style and keep the last part in the existing restrained bronze accent.
+Keep all other existing information exactly, preserving accents and spelling:
+“Berger & Associés”
+“Conseil en gestion de patrimoine · Paris”
+“Depuis 2013”
+Keep the landscape format, warm light background, deep navy text, subtle bronze, refined sober typography, left alignment and the fine rule near the bottom. Adjust headline size and line breaks only as necessary to fit the longer wording.
+No additional text, no portrait, no photograph, no icon, no added logo, no new commercial claim, no watermark. Preserve the existing visual identity and information.

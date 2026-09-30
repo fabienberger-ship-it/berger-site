@@ -3,7 +3,6 @@ import '../styles/global.css';
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -27,6 +26,9 @@ const { title, description, canonicalPath, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <CookieBanner />
+    <script>
+      // Nettoyage ciblé de l'ancienne préférence : aucun outil de suivi ne l'utilise.
+      try { localStorage.removeItem('cookie-consent'); } catch { /* Navigation sans stockage disponible. */ }
+    </script>
   </body>
 </html>

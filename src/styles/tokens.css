@@ -1,9 +1,9 @@
 /* Design tokens — palette P2 "Ivoire & Nuit" + typographies */
 :root {
   /* Palette */
-  --c-ivoire: #FAF6EC;
-  --c-navy: #14233A;
-  --c-slate: #5F6574;
+  --c-ivoire: #F6F4EF;
+  --c-navy: #172F43;
+  --c-slate: #5D6267;
   --c-gold: #B69153;         /* bright gold — decorative, dark bg only */
   --c-gold-ink: #6F5424;     /* darker gold — body text on ivoire AND sand (WCAG AA) */
   --c-sand: #E8DEC9;
@@ -19,8 +19,8 @@
   --c-divider: rgba(20, 35, 58, 0.12);
 
   /* Typography */
-  --ff-sans: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
-  --ff-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --ff-sans: 'DM Sans', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --ff-serif: 'Libre Caslon Display', Georgia, 'Times New Roman', serif;
 
   --fs-xs: 0.75rem;    /* 12px */
   --fs-sm: 0.875rem;   /* 14px */
@@ -47,9 +47,9 @@
   --s-7: 6rem;     /* 96 */
 
   /* Layout */
-  --max-content: 960px;
-  --max-wide: 1200px;
-  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --max-content: 1320px;
+  --max-wide: 1440px;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
 
   /* Borders / shadows */
   --radius-sm: 2px;
